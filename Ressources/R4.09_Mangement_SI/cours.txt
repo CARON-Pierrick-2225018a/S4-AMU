@@ -1,74 +1,149 @@
-Application 1 :
-1 - Les personnes concernées par la télémédecine sont les patients, Les professionnels de santé qui peuvent être impliqués dans la télémédecine comprennent les médecins généralistes, les spécialistes, les gériatres, et d'autres professionnels de la santé.
-
-2 - Les informations collectées grâce à la télémédecine des données médicales telles que les antécédents médicaux du patient, les résultats d'examens médicaux, les symptômes présentés, et d'autres informations pertinentes pour la prise en charge médicale à distance.
-
-3 - Les composantes du système de télémédecine mentionné dans l'exemple de Télégeria comprennent :
-
-Un dispositif utilisant les technologies de l'information et de la communication.
-Un ordinateur avec accès à Internet à haut débit.
-Une webcam ou un dispositif spécifiquement élaboré pour permettre la visioconférence.
-Des professionnels de santé spécialisés, tels que des gériatres et d'autres spécialistes.
+30 Janv 2024
 
 
-4 - Les décisions qui peuvent être prises grâce à la télémédecine incluent :
+Exo 1 :
+1) Les personnes concernées par la télémédecine sont :
 
-Diagnostics à distance : Les médecins peuvent évaluer les symptômes et les résultats d'examens pour poser un diagnostic.
-Recommandations de traitement : Les professionnels de santé peuvent recommander des traitements médicaux appropriés à distance.
-Suivi médical : La télésurveillance permet de suivre l'évolution de l'état de santé d'un patient à distance.
-Consultations spécialisées : Les patients peuvent bénéficier de l'expertise de spécialistes même s'ils ne sont pas physiquement présents.
+- Les médecins et les spécialistes qui pratiquent la télémédecine, tels que les gériatres et d'autres spécialistes médicaux.
+- Les patients qui bénéficient des consultations, expertises, surveillances ou encadrements d'opérations chirurgicales à distance.
 
-Application 2 :
+2) Les informations collectées grâce à ce système peuvent inclure :
 
-1 - Composantes du Système d'Information de l'entreprise Rossignol :
+- Les données médicales des patients, telles que les antécédents médicaux, les résultats d'examens cliniques, les images médicales.
+- Les observations des médecins et des spécialistes pendant les consultations à distance.
+- Les données de surveillance médicale, telles que les constantes vitales (pression artérielle, fréquence cardiaque, etc.) pour la télésurveillance.
 
-Composantes Humaines :
+3) Les composantes de ce système sont :
 
-Commerciaux Rossignol et Dynastar : Les utilisateurs finaux du système d'information, équipés d'ordinateurs portables et responsables de la collecte d'informations sur le terrain.
-Personnel au siège : Qui traite les rapports de visite et utilise les données mises à jour pour prendre des décisions.
-Composantes Organisationnelles :
+- Les dispositifs utilisant les technologies de l'information et de la communication, comme les ordinateurs avec accès à Internet à haut débit, les webcams, et les logiciels de visioconférence.
+- Les plateformes spécifiquement élaborées pour la télémédecine.
+- Les réseaux de communication à haut débit permettant la transmission sécurisée des données médicales.
+- Les protocoles de sécurité et de confidentialité pour protéger les informations médicales des patients.
 
-Gestion Commerciale et ERP (System 21 de GEAC) : Les applications centrales qui gèrent les données commerciales, les fiches clients, les références produits, etc.
-AS/400 : Les serveurs hébergeant les applications ERP, situés à Voiron pour Rossignol et à Sallanches pour Dynastar.
-Réseau Privé Virtuel (VPN) : Pour sécuriser les communications entre les commerciaux en déplacement et le siège.
-Composantes Technologiques :
+4) Les décisions qui pourront être prises grâce à la télémédecine comprennent :
 
-Ordinateurs portables : Utilisés par les commerciaux pour accéder aux fiches clients, aux références produits, et pour envoyer les rapports de visite.
-Connexion Internet : Utilisée pour envoyer les rapports de visite au siège via le Réseau Privé Virtuel.
-Système d'Information Géographique (SIG) : Peut être utilisé par les commerciaux pour optimiser leurs déplacements dans la montagne.
-
-2 - Fonctions du Système d'Information de l'entreprise Rossignol :
-
-  Collecte et Gestion de Données Commerciales : Les données sur les clients, les produits, et les statistiques sont collectées et gérées par le système d'information.
-
-  Communication et Transmission d'Informations : Les commerciaux peuvent communiquer avec le siège en envoyant des rapports de visite, assurant ainsi une mise à jour quotidienne des informations.
-
-  Mise à Jour Permanente de l'ERP : Les données collectées sur le terrain sont régulièrement synchronisées avec les applications centrales (ERP) pour assurer une base de données à jour.
-
-3 - Avantages de la Façon de Travailler des Commerciaux :
-
-  Réactivité : Les commerciaux peuvent réagir rapidement aux changements et aux demandes des clients grâce à la mise à jour quotidienne des informations.
-
-  Optimisation des Déplacements : Les commerciaux peuvent utiliser des données statistiques et éventuellement des systèmes d'information géographique pour optimiser leurs déplacements, économisant ainsi du temps et des ressources.
-
-  Sécurité des Communications : La connexion via un Réseau Privé Virtuel assure la sécurité des échanges de données, garantissant la confidentialité des informations commerciales.
-
-  Efficacité Globale : La synchronisation régulière des données entre les postes distants et le siège contribue à une gestion efficace des informations, soutenant ainsi les prises de décisions rapides au niveau de l'entreprise.
+- Le diagnostic médical à distance, basé sur les informations collectées lors des consultations virtuelles.
+- La prescription de médicaments et de traitements adaptés aux patients.
+- L'orientation des patients vers des services de soins spécialisés si nécessaire.
+- Le suivi à distance de l'évolution de l'état de santé des patients, notamment à travers la télésurveillance.
+- La coordination des soins entre différents professionnels de santé, même s'ils sont géographiquement éloignés les uns des autres.
 
 
-Chapitre 2 - La transformation de l'information en ressource
+Exo2 :
+1) Identifiez quelles sont les composantes du système d’information de l’entreprise Rossignol ?
+- composante humaine : 40 commerciaux, les clients
+- composante technologique : Système ERP (Enterprise Resource Planning), VPN, Ordinateurs, Connexion internet, serveurs, AS400x2, System 21, application force de vente, gestion commerciale
+- composante organisationnel : fiches produit, fiche client, données de gestion commerciale, données statistiques
 
-l'information est à la fois source et résultante de l'action individuelle et collective. Les Si contribuant à faire de information une ressource stragtégique pour tout oragnisation.
 
-    I - la transformation d'une données en information puis en connaissance
+Chapitre 2 - La transformation de l'info en ressource.
+L'info est a la fois source et résultante de l'action individuelle et collective. Les SI contribuent a faire des l'info une ressource stratégique pour toute orga.
+1 - La transformation d'une donnée en information puis en connaissance
+	a - De la donnée a l'info:
+		- une donnée est un élément brut livré en dehors de tout contexte
+		- cette donnée devient information lorsqu'elle est contextualisé
+		- une info n'a de la valeur que si elle permet de réduire l'incertitude d'améliorer la décision et d'éviter de comettre des erreurs. Il existe différente catégories d'info selon leurs domaine, leurs nature (quantitative/qualitative) ou leurs forme (visuel, écrite, sonore)
+	b - l'info provient de la combinaison de plusieurs données entre elles qui aboutissent a une connaissance. La connaissance est le résultat de l'interprétation d'une ou plusieurs info
+2 - Le rapport information comm dans le contenue du message
+	Dès qu'une info est destiné a un tier, elle devient comm composé de deux élèm, le contenue et la relation établie entre les acteurs. Deux types de comm :
+	- interne : qui donne un sens a l'action pour fav l'implication, la motiv et l'intégration du personnel, assurer la cohésion des équipes de travail et fav le travail en commun tout en développant une culture d'entrep
+	- externe : échange avec les partenaires exterieurs
 
-      1 - De la donnée à l'inforamtion
-      - Une donnée est un élément brute livrer en dehors de tout contexte
-      - Cette données devient inforamtion lorsqu'elle est contextualiser
-      - Une inforamtion n'a de la valeur que si elle permet de reduire l'insertitude d'améliorer la décision et d’éviter de commettre des erreurs; Il existe différentes catégories d'information selon leur domaine leur nature (quantitative ou qualitative) ou leur forme visuel, écrite sonor oral
 
-      2 - l'inforamtion provient de la combinaison de plusieurs données entre elle qui aboutisseà une connaisance
-      La connaissance est le résultat de l'intermpretation d'une ou plusier info
+Chapitre 3 - le SI dans l'organisation
+Les connaissances deviennent la première richesse de l'entreprise et ces même connaissances une fois traité génère de la valeur et permettent d'atteindre les objectifs fixés par l'orga. Les composantes jouent un rôle central puisqu'ils permettent de récupérer, de traiter, de diffuser et de stocker les informations necessaires au bon fonctionnement de l'organisation. Les entreprises se situent dans des environnements qu'on appelle éco-système, avec lesquels elles ont de plus en plus de relations, on parle de système ouvert. Un enssemble de flux (financier, physique et informationnel) interne/externe traverse en permanance ces structures. Le SI se situe entre le système de pilotage ou on prend toutes les decisions stratégique et le système opérationnel ou on prend toutes les descisions de gestion courante. La première finalité du SI est donc de permettre aux individus de réaliser des tâches courantes lié a leurs activités. Le SI est donc un intrument indispensable, outil d'aide a la descision et générateur de valeur. Il doit être durable et souple. Sa conception doit permettre un conttinuité de service permanante et en même temps anticiper les évolutions.
 
-    II - Le rapport inforamtion communication dans le contenu du message
-    Des qu'une information est destiné à un tiers elle devient communication composé de deux élément le contenu et la relation établit entre les acteurs. 2 types de comm interne(qui donne un sens à l'anction pour favoriser l'implication , la motivation et l'intégration du personnel assurer la coésion des équipe de travail et favoriser le travail en commun tout en dév une culture d'entreprise) et externe   échange a
+I - Le pilotage du SI
+	La complexité et l'importance du SI impose au management de l'orga de suivre dans le temps et en permanance la mise en place et la performance du SI.
+	Les decisions stratégiques doivent être prisent pour arreter et identifier :
+		- les besions
+		- l'architecture globale du SI (cartographie)
+		- les ressources
+		- la formalisation des procedures
+		- les outils a mettre en oeuvre
+		- la mesure de la performance
+	Ces decisions sont prisent par un comité de pilotage stratégique du SI
+
+II
+	b - les contraintes
+		Le SI doit être fiable afin de garentir la qualité de l'information et rapide. Le SI doit être utilisé de facon objective afin d'éviter les erreurs d'interprétation qui peuvent avoir des conséquences néfaste pour l'orga.
+
+III - Les conditions d'éfficacité du SI
+	- Performance technique permet la recherche l'échange et l'exploitation d'informations
+
+IV - SI et organisation du travail
+	I - Le travail a distance
+		A - les avantages
+			- efficacité parce que moins de stresse, abssance de trajet, meilleur équilibre
+			- flexibilité, toujours équipé le télétravailleur outils + info ou qu'il soit
+			- le partage, pour rester en contact avec l'entreprise et atteindre les objectifs fixé, le télétravailleur doit communiquer + échanger des infos sur l'évolution de son travail et collaborateurs
+
+		B - les problèmes
+			- juridiques, télé pose questions concernant application des disposition relatives aux accidents travail, contrôle temps travail, utilisation équipement
+			- cohésion,  télé limite contacts entre collaborateurs = manque de cohésion + abssance de culture d'entrep
+			- sécurité, revèle faiblesse SI, necessite SI adapté + règles confidentialité + accès sécurisé réseau entrep
+			- isolement, enployeur X exercer mm controle sur salarié ca suppose relation confiance forte + management par objectifs
+
+	II - Le cyber espace
+		I - Un outil de promo
+			Virtualité offre possibilités dans créa et la présentation d'une vitrine commerciale
+
+		II - Outil de comm
+			relation moindre coût, mise en place serveur qui cherche info souhaité,
+
+		III - Outil de marketing
+			les outils de reférencements + moteur recherche, les entrepr peuvent trouver cible cosomatrice a l'inter
+
+		IV - le E commerce
+			a - outil commercial
+				- aucune contrainte géo
+				- strat juste a temps
+				- forte valeur ajouté
+				- export PME PMI
+				- dispo perma offre
+				- mailleur ajust demande
+				- circulation + rapide produits
+				- reduction stock + invendus
+			b - avantage
+				- achat produit mm entrangé
+				- pop internaute jeune + pouvoir achat
+				- tout le monde accès internet
+				- SAV
+				- contact facilité
+				- mise en place de grp de discu
+				- mutlipl sondage
+				- analyse temps réél
+				- 24/24 FAQ
+			d - m-commerce
+				regrp ensemble appli commerciales liés aux terminaux mobiles et transac commerciales effectué le + souvent en situation de mobilité
+
+Chapitre 5 :
+Un progiciel est un logiciel clé en main mais paramétrable qui répond à des besoins standardisé dans un domaine on l'oppose à un développement spécifique. Un progiciel est le fruit du développement par un éditeur ou une communauté. Un PGI progiciel de gestion intégré est un produit logiciel paramétrable construit autour d'une base de données unique susceptible de couvrir la majorité des besoins en traitement d'information des différents service d'une organisation grace à un eensemble de module compatible. La notion d'intégration signifie qu'une même donnée n'est saisi qu'une seule fois dans le SI et ses applications ce qui supprime les redondances garantit l'unitité des données et de leur màj. Vhaque depot du processus n'a accès qu'au données le concernant via un module dédié à son métier.
+
+A - Les avantages d'un PGI
+  - Conservation des données : L’intérêt de pouvoir créer des entrepôt de données qui conserve l'historique des informations. L'entreprise peut garder en mémoire les événements passé
+  - réduction des coûts et des délais : d'une app informatique grâce à la mutualisation par un éditeur de solution normaliser d'automatisation des fonctions de gestion.
+  - Maintien de la compétitivité de l'entreprise dans un secteur si les entreprises majeur l'adopte les dirigeants des autres entreprises suive fréquemment et opte pour cette solution
+  -Facilité pour échanger avec les partenaires une grande entreprise qui adopte le PGI peut demander à ces partenaires de s'équiper à leur tour d'un PGI pour échanger directement des informations.
+  -Processus et données uniformisé tout les acteurs opèrent quotidiennement avec un langage méthode et outil commun
+  -Contribution à la réussite d'une stratégie global ça permet de collecter stocker diffuser traiter les données à travers différents environnements culturelle
+
+B - Les rigidités d'un PGI
+  - surveillance accru des salariés par les technologies toute personne ayant des droits d'accès suffisant peuvent en permanence accéder au activité de chacun des collaborateurs de l'entreprise. Ces collaborateurs peuvent perdre le contrôle des informations qu'il manipule ou produise.
+  - Perte de la maîtrise de l'information pour les salariés la transparence et la traçabilité permette l'identification des responsabilités les contrôle automatisé, les comparaison en continue des performances et des coûts
+  - Impacte considérable sur l'organisation les collaborateurs doivent être préparé à accepter les bouleversement qui en découle donc des formations sont nécessaires
+  - Standardisation des processus de travail par les technologies
+  - Projet souvent long et coûteux un reflexion et nécessaire car mise en oeuvre s'avaire lourd et régide une bonne connaisance des processus est nécessaires pour sont succès Il convient d'adapter des processus de l'entreprise à l'outil à moins de disposer de la taille et de la puissance financière suffissante pour pouvoir engeger des devlp informatique onereux
+  -Le risque de perte de savoir faire et de perte d'un potentiel
+  -Néccèsité d'une maintanance continue une fois l'editeur du PGI sélection risque d'etre enchainer à son éditeur
+
+C - Conclusion
+  Le PGI est un outil de gestion en plein essor cela permet au organisation de bénéficier d'une intégration informationnel d'uniformisé leur support informatique et les processus associé au activité informatisé . Une organisation ne doit pas adopter un PGI sans une reflexion approfondi car il a des impacts intra et inter organisationnel. Le PGI est toujours orienté vers la satisfaction client.
+
+  Les étapes de mise en place d'un PGI
+    1 - Identification des processus visé
+    2 - Installation et paramétrage du PGI
+      a - Certains processus seront intégré tels quelle dans le PGI
+      b- D'autre processus  seront reconfigurer lors de la mise en place pour s'adapter au PGI
+      c- Des dévellopement spécifique peuvent être nécessaire
+    3 - Formations des utilisateurs  

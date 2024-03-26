@@ -1,0 +1,10 @@
+11/03/2024 
+
+Author : Flouvat 
+
+Title : Chapitre 3 -> Utilisation et conception de service web 
+
+DEux type de services web :
+	Les "big" web services
+	Les "RESTful" web services 
+Ce renseigner sur l'architecture REST 

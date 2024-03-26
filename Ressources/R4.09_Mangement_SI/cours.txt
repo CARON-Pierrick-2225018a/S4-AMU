@@ -1,0 +1,74 @@
+Application 1 :
+1 - Les personnes concernées par la télémédecine sont les patients, Les professionnels de santé qui peuvent être impliqués dans la télémédecine comprennent les médecins généralistes, les spécialistes, les gériatres, et d'autres professionnels de la santé.
+
+2 - Les informations collectées grâce à la télémédecine des données médicales telles que les antécédents médicaux du patient, les résultats d'examens médicaux, les symptômes présentés, et d'autres informations pertinentes pour la prise en charge médicale à distance.
+
+3 - Les composantes du système de télémédecine mentionné dans l'exemple de Télégeria comprennent :
+
+Un dispositif utilisant les technologies de l'information et de la communication.
+Un ordinateur avec accès à Internet à haut débit.
+Une webcam ou un dispositif spécifiquement élaboré pour permettre la visioconférence.
+Des professionnels de santé spécialisés, tels que des gériatres et d'autres spécialistes.
+
+
+4 - Les décisions qui peuvent être prises grâce à la télémédecine incluent :
+
+Diagnostics à distance : Les médecins peuvent évaluer les symptômes et les résultats d'examens pour poser un diagnostic.
+Recommandations de traitement : Les professionnels de santé peuvent recommander des traitements médicaux appropriés à distance.
+Suivi médical : La télésurveillance permet de suivre l'évolution de l'état de santé d'un patient à distance.
+Consultations spécialisées : Les patients peuvent bénéficier de l'expertise de spécialistes même s'ils ne sont pas physiquement présents.
+
+Application 2 :
+
+1 - Composantes du Système d'Information de l'entreprise Rossignol :
+
+Composantes Humaines :
+
+Commerciaux Rossignol et Dynastar : Les utilisateurs finaux du système d'information, équipés d'ordinateurs portables et responsables de la collecte d'informations sur le terrain.
+Personnel au siège : Qui traite les rapports de visite et utilise les données mises à jour pour prendre des décisions.
+Composantes Organisationnelles :
+
+Gestion Commerciale et ERP (System 21 de GEAC) : Les applications centrales qui gèrent les données commerciales, les fiches clients, les références produits, etc.
+AS/400 : Les serveurs hébergeant les applications ERP, situés à Voiron pour Rossignol et à Sallanches pour Dynastar.
+Réseau Privé Virtuel (VPN) : Pour sécuriser les communications entre les commerciaux en déplacement et le siège.
+Composantes Technologiques :
+
+Ordinateurs portables : Utilisés par les commerciaux pour accéder aux fiches clients, aux références produits, et pour envoyer les rapports de visite.
+Connexion Internet : Utilisée pour envoyer les rapports de visite au siège via le Réseau Privé Virtuel.
+Système d'Information Géographique (SIG) : Peut être utilisé par les commerciaux pour optimiser leurs déplacements dans la montagne.
+
+2 - Fonctions du Système d'Information de l'entreprise Rossignol :
+
+  Collecte et Gestion de Données Commerciales : Les données sur les clients, les produits, et les statistiques sont collectées et gérées par le système d'information.
+
+  Communication et Transmission d'Informations : Les commerciaux peuvent communiquer avec le siège en envoyant des rapports de visite, assurant ainsi une mise à jour quotidienne des informations.
+
+  Mise à Jour Permanente de l'ERP : Les données collectées sur le terrain sont régulièrement synchronisées avec les applications centrales (ERP) pour assurer une base de données à jour.
+
+3 - Avantages de la Façon de Travailler des Commerciaux :
+
+  Réactivité : Les commerciaux peuvent réagir rapidement aux changements et aux demandes des clients grâce à la mise à jour quotidienne des informations.
+
+  Optimisation des Déplacements : Les commerciaux peuvent utiliser des données statistiques et éventuellement des systèmes d'information géographique pour optimiser leurs déplacements, économisant ainsi du temps et des ressources.
+
+  Sécurité des Communications : La connexion via un Réseau Privé Virtuel assure la sécurité des échanges de données, garantissant la confidentialité des informations commerciales.
+
+  Efficacité Globale : La synchronisation régulière des données entre les postes distants et le siège contribue à une gestion efficace des informations, soutenant ainsi les prises de décisions rapides au niveau de l'entreprise.
+
+
+Chapitre 2 - La transformation de l'information en ressource
+
+l'information est à la fois source et résultante de l'action individuelle et collective. Les Si contribuant à faire de information une ressource stragtégique pour tout oragnisation.
+
+    I - la transformation d'une données en information puis en connaissance
+
+      1 - De la donnée à l'inforamtion
+      - Une donnée est un élément brute livrer en dehors de tout contexte
+      - Cette données devient inforamtion lorsqu'elle est contextualiser
+      - Une inforamtion n'a de la valeur que si elle permet de reduire l'insertitude d'améliorer la décision et d’éviter de commettre des erreurs; Il existe différentes catégories d'information selon leur domaine leur nature (quantitative ou qualitative) ou leur forme visuel, écrite sonor oral
+
+      2 - l'inforamtion provient de la combinaison de plusieurs données entre elle qui aboutisseà une connaisance
+      La connaissance est le résultat de l'intermpretation d'une ou plusier info
+
+    II - Le rapport inforamtion communication dans le contenu du message
+    Des qu'une information est destiné à un tiers elle devient communication composé de deux élément le contenu et la relation établit entre les acteurs. 2 types de comm interne(qui donne un sens à l'anction pour favoriser l'implication , la motivation et l'intégration du personnel assurer la coésion des équipe de travail et favoriser le travail en commun tout en dév une culture d'entreprise) et externe   échange a

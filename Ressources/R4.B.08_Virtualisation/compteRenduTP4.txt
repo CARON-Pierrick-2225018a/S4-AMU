@@ -1,0 +1,28 @@
+Title : Création d'une base de données MySQL
+
+Author : CARON Pierrick G2B
+
+1. Récupérer une image mysql:latest :
+   `docker pull mysql:latest`
+
+2. Lancer un conteneur à partir de cette image
+   `docker run -d --name mysql-container -e MYSQL_ROOT_PASSWORD=password -e MYSQL_DATABASE=my_database mysql:latest`
+
+3. Ajouter un tableau users dans ce conteneur et rajouter votre nom dedans :
+   `docker exec -it mysql-container mysql -u root -p`
+   Et on éxécute les commandes SQL :
+   ```
+   CREATE TABLE IF NOT EXISTS my_database.users (name VARCHAR(255) NOT NULL);
+   INSERT INTO my_database.users VALUES ('CARON');
+   ```
+
+4. Créer une image à partir de ce conteneur avec un tag personnel
+   `docker commit mysql-container mon-nom/mysql-personnalise:tag-personnel`
+
+5. Pousser sur l'organisation formationsdocker :
+   `docker tag caron/mysql-personnalise:tag-personnel formationsdocker/mysql-personnalise:tag-personnel
+    docker push formationsdocker/mysql-personnalise:tag-personnel`
+
+6. Récupérer l'image pushée et vérifier le résultat :
+   `docker pull formationsdocker/mysql-personnalise:tag-personnel
+    docker run -it --rm formationsdocker/mysql-personnalise:tag-personnel mysql -h host -u root -ppassword my_database -e "SELECT * FROM users;"`

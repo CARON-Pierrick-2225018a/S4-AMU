@@ -1,0 +1,36 @@
+Title : Modification d'un conteneur et pusher une image docker 
+
+Author : CARON Pierrick (GBan2)
+
+Voici la liste des commandes pour effectuer les différentes tâches.
+
+1. Récupérer l'image nginx:latest :
+	'docker pull nginx:latest'
+
+2. Lancer un conteneur à partir de cette image en mode daemon :
+	'docker run -d --name mon-nginx nginx:latest'
+
+3. Vérifier que le conteneur est bien fonctionnel
+	'docker ps'
+
+4. Lancer un conteneur à partir de cette image en mode interactif :
+	'docker run -it --name mon-nginx-iteractif nginx:latest /bin/bash'
+
+5. Afficher le contenu du fichier /etc/nginx/nginx.conf
+	'cat /etc/nginx/nginx.conf'
+
+6. Créer un dossier sur la machine hôte et copier dedans le fichier de configuration nginx 
+	'mkdir nginx_config'
+	'cp /etc/nginx/nginx.conf nginx_config'
+
+7. Modifier le nombre des clients actifs en parrallèle sur le serveur nginx :
+	Modification du fichier nginx.conf 
+
+8. Copier ce fichier sur le conteneur 
+	'docker cp nginx_config/nginx.conf mon-nginx:/etc/nginx/nginx.conf'
+
+9. Vérifier que le fichier est bien modifié dans le conteneur 
+	'cat /etc/nginx/nginx.conf'
+
+10. Supprimer le conteneur 
+	'docker rm mon-nginx mon-nginx-intéractif'

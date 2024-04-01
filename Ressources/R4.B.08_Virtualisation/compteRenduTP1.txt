@@ -1,0 +1,29 @@
+Title : Récupération d'une image Docker 
+
+Author : CARON Pierrick (GBan2)
+
+Voici la liste des commandes pour effectuer les différentes tâches.
+
+1. Récupérer l'image mysql:5.7 :  
+	'docker pull mysql:5.7'
+
+2. Taguer cette image avec un tag personnel : 
+	'docker tag mysql:5.7 caron/mysql:5.7'
+
+3. Supprimer l'image récupérée :
+	'docker rmi mysql:5.7'
+
+4. Récupérer l'image mysql:latest :
+	'docker pull mysql:latest'
+
+5. Taguer l'image mysql:latest avec mon nom :
+	'docker tag mysql:latest caron/mysql:latest'
+
+6. Afficher l'historique de cette image : 
+	'docker history mysql:latest'
+
+7. Supprimer l'image taguée 
+	'docker rmi caron/mysql:latest'
+
+8. Supprimer l'image récupérée :
+	'docker rmi mysql:latest'

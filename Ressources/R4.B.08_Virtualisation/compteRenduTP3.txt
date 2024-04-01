@@ -1,0 +1,21 @@
+Title : Modification d'un conteneur et pusher une image Docker
+
+Author : CARON Pierrick G2B
+
+Voici la liste des commandes pour effectuer les différentes tâches.
+
+1. Lancer une autre fois le conteneur à partir de l'image nginx :
+	'docker run -d --name mon-nginx nginx:latest'
+
+2. Personnaliser les messages à afficher en rajoutant votre nom :
+	Pour faire ça faut modifier le contenu des fichiers
+
+3. Créer votre image à partir de ce conteneur :
+	'docker commit mon-nginx caron/nginx-personnalise'
+
+4. Pusher cette image sur votre dépôt Docker Hub avec un tag personnel :
+	'docker tag caron/nginx-personnalise caron/nginx-personnalise:tag-personnel'
+	'docker push caron/nginx-personnalise:tag-personnel'
+
+5. Lancer un conteneur à partir de cette image et rajouter un port :
+	'docker run -d -p 8082:80 --name mon-nginx-personnalise caron/nginx-personnalise:tag-personnel'

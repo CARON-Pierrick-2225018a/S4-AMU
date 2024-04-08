@@ -1,0 +1,7 @@
+Check version
+lsb_release -a -> permet d'afficher toute les informations sur le système
+lsb_release -r -> pour voir le release 
+Ubuntu 18.04
+
+
+Faire les mises à jours

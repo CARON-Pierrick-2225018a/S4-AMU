@@ -1,0 +1,15 @@
+dpkg: error processing package proftpd-basic (--configure):
+ dependency problems - leaving unconfigured
+dpkg: dependency problems prevent configuration of proftpd-mod-ldap:
+ proftpd-mod-ldap depends on proftpd-core (= 1.3.7c+dfsg-1build1); however:
+  Package proftpd-core is not configured yet.
+
+dpkg: error processing package proftpd-mod-ldap (--configure):
+ dependency problems - leaving unconfigured
+Errors were encountered while processing:
+ proftpd-core
+ proftpd-mod-crypto
+ proftpd-mod-wrap
+ proftpd-basic
+ proftpd-mod-ldap
+E: Sub-process /usr/bin/dpkg returned an error code (1)

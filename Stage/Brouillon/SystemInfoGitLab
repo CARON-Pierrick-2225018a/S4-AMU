@@ -33,3 +33,6 @@ Repository storage paths:
 - default:      /var/opt/gitlab/git-data/repositories
 GitLab Shell path:              /opt/gitlab/embedded/service/gitlab-shell
 Git:            /opt/gitlab/embedded/bin/git
+
+
+wget --content-disposition https://packages.gitlab.com/gitlab/gitlab-ee/packages/el/7/gitlab-ee-16.8.5-ee.0.el7.x86_64.rpm/download.rpm

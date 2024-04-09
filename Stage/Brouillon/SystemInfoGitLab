@@ -36,3 +36,67 @@ Git:            /opt/gitlab/embedded/bin/git
 
 
 wget --content-disposition https://packages.gitlab.com/gitlab/gitlab-ee/packages/el/7/gitlab-ee-16.8.5-ee.0.el7.x86_64.rpm/download.rpm
+
+
+Defined-By: systemd
+░░ Support: http://www.ubuntu.com/support
+░░
+░░ An ExecStop= process belonging to unit jenkins.service has exited.
+░░
+░░ The process' exit code is 'exited' and its exit status is 100.
+avril 09 15:42:26 osmtools systemd[1]: jenkins.service: Failed with result 'exit-code'.
+░░ Subject: Unit failed
+░░ Defined-By: systemd
+░░ Support: http://www.ubuntu.com/support
+░░
+░░ The unit jenkins.service has entered the 'failed' state with result 'exit-code'.
+avril 09 15:42:26 osmtools systemd[1]: Stopped LSB: Start Jenkins at boot time.
+░░ Subject: A stop job for unit jenkins.service has finished
+░░ Defined-By: systemd
+░░ Support: http://www.ubuntu.com/support
+░░
+░░ A stop job for unit jenkins.service has finished.
+░░
+░░ The job identifier is 1942267 and the job result is done.
+avril 09 15:42:26 osmtools systemd[1]: jenkins.service: Consumed 1.826s CPU time.
+░░ Subject: Resources consumed by unit runtime
+░░ Defined-By: systemd
+░░ Support: http://www.ubuntu.com/support
+░░
+░░ The unit jenkins.service completed and consumed the indicated resources.
+avril 09 15:51:45 osmtools systemd[1]: Starting LSB: Start Jenkins at boot time...
+░░ Subject: A start job for unit jenkins.service has begun execution
+░░ Defined-By: systemd
+░░ Support: http://www.ubuntu.com/support
+░░
+░░ A start job for unit jenkins.service has begun execution.
+░░
+░░ The job identifier is 1951510.
+avril 09 15:51:45 osmtools jenkins[2168664]: Correct java version found
+avril 09 15:51:45 osmtools jenkins[2168664]:  * Starting Jenkins Automation Server jenkins
+avril 09 15:51:46 osmtools su[2168718]: (to jenkins) root on none
+avril 09 15:51:46 osmtools su[2168718]: pam_unix(su-l:session): session opened for user jenkins(uid=119) by (uid=0)
+avril 09 15:51:46 osmtools su[2168718]: pam_unix(su-l:session): session closed for user jenkins
+avril 09 15:51:47 osmtools jenkins[2168664]:    ...fail!
+avril 09 15:51:47 osmtools systemd[1]: jenkins.service: Control process exited, code=exited, status=7/NOTRUNNING
+░░ Subject: Unit process exited
+░░ Defined-By: systemd
+░░ Support: http://www.ubuntu.com/support
+░░
+░░ An ExecStart= process belonging to unit jenkins.service has exited.
+░░
+░░ The process' exit code is 'exited' and its exit status is 7.
+avril 09 15:51:47 osmtools systemd[1]: jenkins.service: Failed with result 'exit-code'.
+░░ Subject: Unit failed
+░░ Defined-By: systemd
+░░ Support: http://www.ubuntu.com/support
+░░
+░░ The unit jenkins.service has entered the 'failed' state with result 'exit-code'.
+avril 09 15:51:47 osmtools systemd[1]: Failed to start LSB: Start Jenkins at boot time.
+░░ Subject: A start job for unit jenkins.service has failed
+░░ Defined-By: systemd
+░░ Support: http://www.ubuntu.com/support
+░░
+░░ A start job for unit jenkins.service has finished with a failure.
+░░
+░░ The job identifier is 1951510 and the job result is failed.

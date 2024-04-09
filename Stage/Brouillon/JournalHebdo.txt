@@ -1,0 +1,10 @@
+08/04/2024 - CARON Pierrick
+
+9h30 -> Rencontre avec mon maitre de stage Thomas Meredith, présentation de l'équipe informatique de l'Etsi
+10h -> Récupéoration du matériel (laptop, code d'accès, clavier, souris, écran, badge)
+10h30 -> Présentation de l'infrastructure de l'ETSI avec explication de mes premiers objectifs
+11h -> Début du travail on met en place une VM pour faire la mise à jour de OS de ubuntu 18.04 à ubuntu 22.04
+12h - 14h -> pause manger
+14h -> Faire la mise à jour de l'OS
+17h30 -> Mise en place du travail à faire pour le lendemain
+        Gérer les problèmes de dépendance, mettre des outils à jour et upgrade d'un autre OS 

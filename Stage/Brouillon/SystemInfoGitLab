@@ -1,0 +1,35 @@
+System information
+System:         Ubuntu 22.04
+Proxy:          no
+Current User:   git
+Using RVM:      no
+Ruby Version:   2.7.2p137
+Gem Version:    3.1.4
+Bundler Version:2.1.4
+Rake Version:   13.0.3
+Redis Version:  6.0.14
+Git Version:    2.32.0
+Sidekiq Version:5.2.9
+Go Version:     unknown
+
+GitLab information
+Version:        14.1.8-ee
+Revision:       ef8ecf9b858
+Directory:      /opt/gitlab/embedded/service/gitlab-rails
+DB Adapter:     PostgreSQL
+DB Version:     12.7
+URL:            https://osm.etsi.org/gitlab
+HTTP Clone URL: https://osm.etsi.org/gitlab/some-group/some-project.git
+SSH Clone URL:  ssh://git@osm.etsi.org:29419/some-group/some-project.git
+Elasticsearch:  no
+Geo:            no
+Using LDAP:     yes
+Using Omniauth: yes
+Omniauth Providers:
+
+GitLab Shell
+Version:        13.19.1
+Repository storage paths:
+- default:      /var/opt/gitlab/git-data/repositories
+GitLab Shell path:              /opt/gitlab/embedded/service/gitlab-shell
+Git:            /opt/gitlab/embedded/bin/git

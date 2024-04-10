@@ -20,3 +20,6 @@ dpkg: error processing archive /var/cache/apt/archives/gitlab-ee_16.10.1-ee.0_am
 Errors were encountered while processing:
  /var/cache/apt/archives/gitlab-ee_16.10.1-ee.0_amd64.deb
 E: Sub-process /usr/bin/dpkg returned an error code (1)
+
+
+N: Download is performed unsandboxed as root as file '/root/jdk-21_linux-x64_bin.deb' couldn't be accessed by user '_apt'. - pkgAcquire::Run (13: Permission denied)

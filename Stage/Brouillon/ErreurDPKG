@@ -13,3 +13,10 @@ Errors were encountered while processing:
  proftpd-basic
  proftpd-mod-ldap
 E: Sub-process /usr/bin/dpkg returned an error code (1)
+
+
+dpkg: error processing archive /var/cache/apt/archives/gitlab-ee_16.10.1-ee.0_amd64.deb (--unpack):
+ new gitlab-ee package pre-installation script subprocess returned error exit status 1
+Errors were encountered while processing:
+ /var/cache/apt/archives/gitlab-ee_16.10.1-ee.0_amd64.deb
+E: Sub-process /usr/bin/dpkg returned an error code (1)

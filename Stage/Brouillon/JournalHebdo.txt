@@ -17,4 +17,12 @@ Début 9h - Fin de gestion de problème de dépendance + début upgrade d'un aut
       13h30 -> Début de mise à jour de GitLab et Jenkins
       17h -> Aucun des deux n'est encore fini problème avec les versions
       17h30 -> mise en place du travail pour le lendemain
-            Finir les deux mise à jour des logiciels 
+            Finir les deux mise à jour des logiciels
+
+10/04/2024
+
+Début 9h - Upgrade d'un nouvelle OS + puis debut de l'upgrade de jenkins
+      13h - 14h -> Pause déjeuner
+      14h -> toujours des problèmes de version pour upgrade jenkins
+      15h30 -> Mise à jour de l'OS quasiment fini plus qu'à régler les derniers problèmes de dépendance
+      16h30 -> Mise en place du travail pour le lendemain :

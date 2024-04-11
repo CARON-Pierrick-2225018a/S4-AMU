@@ -1,5 +1,12 @@
 après avoir essayer pas mal de chose rien ne fonctionne donc je pense que ça à été mal installer je vais donc partir sur une nouvelle installation pour cela :
 
 Je vais faire une sauvegarde -> gitlab-backup create
+Nom de la backup 1712843356_2024_04_11_14.1.8-ee_gitlab_backup.tar
+Chemin de la backup /var/opt/gitlab/backups/
+Il faut ajouter certain fichier manuellement avec ->  cp /etc/gitlab/gitlab.rb /var/opt/gitlab/backups/1712843356_2024_04_11_14.1.8-ee_gitlab_backup.tar
+                                                      cp /etc/gitlab/gitlab-secrets.json /var/opt/gitlab/backups/1712843356_2024_04_11_14.1.8-ee_gitlab_backup.tar
 Ensuite on le supprime -> apt-get remove gitlab-ee
-On cherche s'il ne reste pas de trace -> find / -name "*gitlab*" 
+Pour le réinstaller -> apt-get install gitlab-ee
+Du coup on est sur la nouvelle version et on récupère la backup pour que tout ce passe bien et ne pas perdre de données :
+gitlab-backup restore BACKUP=1712843356_2024_04_11_14.1.8-ee_gitlab_backup.tar
+On cherche s'il ne reste pas de trace -> find / -name "*gitlab*"

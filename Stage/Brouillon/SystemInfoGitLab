@@ -105,3 +105,5 @@ avril 09 15:51:47 osmtools systemd[1]: Failed to start LSB: Start Jenkins at boo
 Warning: Your gitlab.rb and gitlab-secrets.json files contain sensitive data
 and are not included in this backup. You will need these files to restore a backup.
 Please back them up manually.
+
+Nom de la backup 1712843356_2024_04_11_14.1.8-ee_gitlab_backup.tar 

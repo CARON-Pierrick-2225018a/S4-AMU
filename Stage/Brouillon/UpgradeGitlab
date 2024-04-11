@@ -1,5 +1,5 @@
-après avoir essayer pas mal de chose rien ne fonctionne donc je pense que ça à été mal installer je vais donc partir sur une nouvelle installation pour cela :
+après avoir essayer pas mal de chose rien ne fonctionne donc je pense que ça à  été mal installer je vais donc partir sur une nouvelle installation pour cela :
 
 Je vais faire une sauvegarde -> gitlab-backup create
 Ensuite on le supprime -> apt-get remove gitlab-ee
-On cherche s'il ne reste pas de trace -> find / -name "*gitlab*" 
+On cherche s'il ne reste pas de trace -> find / -name "*gitlab*"

@@ -26,3 +26,15 @@ Début 9h - Upgrade d'un nouvelle OS + puis debut de l'upgrade de jenkins
       14h -> toujours des problèmes de version pour upgrade jenkins
       15h30 -> Mise à jour de l'OS quasiment fini plus qu'à régler les derniers problèmes de dépendance
       16h30 -> Mise en place du travail pour le lendemain :
+
+
+11/04/2024
+
+Début 9h -> Jenkins plusieurs problèmes pour faire la mise à jour avec différentes versions j'y es passé la matiné mais ça reste un échec pour l'instant
+      12h - 13h -> Pause manger
+      13h mise en place de la mise à jour de GitLab on laisse jenkins de côté pour l'instant
+      17h30 -> Finir jenkins impérativement pour demain essayer de trouver tout les solutions possible quitte à désinstaller et réinstaller
+
+12/04/2024
+
+Télétravail -> Mettre en place jenkins toute la journée

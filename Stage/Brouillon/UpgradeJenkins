@@ -37,3 +37,22 @@ W: GPG error: https://pkg.jenkins.io/debian-stable binary/ Release: The followin
 E: The repository 'https://pkg.jenkins.io/debian-stable binary/ Release' is not signed.
 N: Updating from such a repository can't be done securely, and is therefore disabled by default.
 N: See apt-secure(8) manpage for repository creation and user configuration details.
+
+jenkins.service - Jenkins Continuous Integration Server
+    Loaded: loaded (/lib/systemd/system/jenkins.service; enabled; vendor preset: enabled)
+   Drop-In: /etc/systemd/system/jenkins.service.d
+            └─override.conf
+    Active: failed (Result: exit-code) since Thu 2024-04-11 11:28:58 CEST; 3min 39s ago
+   Process: 4030597 ExecStart=/usr/bin/jenkins (code=exited, status=1/FAILURE)
+  Main PID: 4030597 (code=exited, status=1/FAILURE)
+       CPU: 1.409s
+
+avril 11 11:28:58 osmtools systemd[1]: jenkins.service: Scheduled restart job, restart counter is at 5.
+avril 11 11:28:58 osmtools systemd[1]: Stopped Jenkins Continuous Integration Server.
+avril 11 11:28:58 osmtools systemd[1]: jenkins.service: Consumed 1.409s CPU time.
+avril 11 11:28:58 osmtools systemd[1]: jenkins.service: Start request repeated too quickly.
+avril 11 11:28:58 osmtools systemd[1]: jenkins.service: Failed with result 'exit-code'.
+avril 11 11:28:58 osmtools systemd[1]: Failed to start Jenkins Continuous Integration Server.
+avril 11 11:29:00 osmtools systemd[1]: jenkins.service: Start request repeated too quickly.
+avril 11 11:29:00 osmtools systemd[1]: jenkins.service: Failed with result 'exit-code'.
+avril 11 11:29:00 osmtools systemd[1]: Failed to start Jenkins Continuous Integration Server.

@@ -1,8 +1,26 @@
+Avant de commencer on regarde la version de GitLab soit avec l'IU soit avec la commande gitlab-rake gitlab:env:info
+Ensuite il faut vérifier les étapes pour mettre à jour jusqu'à la dernière version à l'aide de ce site : https://gitlab-com.gitlab.io/support/toolbox/upgrade-path/
+Attention bien vérifer la version de l'OS pour être sur de pouvoir bien faire les différents upgrade avec ce site : https://docs.gitlab.com/ee/administration/package_information/supported_os.html
+
+Une fois que c'est fait
+
+
 Liste des commandes :
 
-Vérifier installation de GitLab : dpkg -l | grep gitlab -> ça me retourne une info donc ça à été installer avec un gestionnaire de paquet
-On va apt-get update et ensuite apt-get install gitlab-ee -> ça ne marche pas on va donc vérifier que le dépot gitlab est correctement configuré en vérifiant sa présence soit dans :
-/etc/apt/sources.list soit dans /etc/apt/sources.list.d/ avec grep
-On trouve bien des fichiers, on va donc faire :
-curl https://packages.gitlab.com/install/repositories/gitlab/gitlab-ee/script.deb.sh | sudo bash
-On essaye d'installer mais ils nous dis de d'abord passer par les versions précédentes donc on va d'abord passer du 14 au 15 -> on va donc chercher les versions disponible avec apt-cache madison gitlab.ee -> je ne trouve pas la version que je souhaite -> Problèmes les versions que je dois installer avant la version finales n'est pas prise en compte avec ubuntu 22 faut revenir sur l'ancienne version pour pouvoir mettre à jour gitlab 
+On va commencer par télécharger les packets avec : curl https://packages.gitlab.com/install/repositories/gitlab/gitlab-ee/script.deb.sh | sudo bash
+On va apt-get update
+Puis on va regarder la liste des versions de gitlab avec apt-cache madison gitlab.ee
+Et enfin apt-get install gitlab-ee=<version>
+
+Dans notre cas pour osmtools qui est sur la version 14.1.8, on doit d'abord faire la mise à jour de gitlab avant celle de l'OS parce que Ubuntu 22 ne prend qu'a partir de la version 15.5.
+
+Différentes étapes de l'upgrade (Il y en a 10) : apt-get install gitlab-ee=14.3.6-ee.0
+                                                 apt-get install gitlab-ee=14.9.5-ee.0
+                                                 apt-get install gitlab-ee=14.10.5-ee.0
+                                                 apt-get install gitlab-ee=15.0.5-ee.0
+                                                 apt-get install gitlab-ee=15.4.6-ee.0
+                                                 apt-get install gitlab-ee=15.11.13-ee.0
+                                                 apt-get install gitlab-ee=16.1.6-ee.0
+                                                 apt-get install gitlab-ee=16.3.7-ee.0
+                                                 apt-get install gitlab-ee=16.7.7-ee.0
+                                                 apt-get install gitlab-ee=16.10.2-ee.0

@@ -1,39 +1,8 @@
-après avoir essayer pas mal de chose rien ne fonctionne donc je pense que ça à  été mal installer je vais donc partir sur une nouvelle installation pour cela :
-
-Je vais faire une sauvegarde -> gitlab-backup create
-Nom de la backup 1712843356_2024_04_11_14.1.8-ee_gitlab_backup.tar
-Chemin de la backup /var/opt/gitlab/backups/
-Il faut ajouter certain fichier manuellement avec ->  cp /etc/gitlab/gitlab.rb /var/opt/gitlab/backups/1712843356_2024_04_11_14.1.8-ee_gitlab_backup.tar
-                                                      cp /etc/gitlab/gitlab-secrets.json /var/opt/gitlab/backups/1712843356_2024_04_11_14.1.8-ee_gitlab_backup.tar
-Ensuite on le supprime -> apt-get remove gitlab-ee
-Pour le réinstaller -> apt-get install gitlab-ee
-Du coup on est sur la nouvelle version et on récupère la backup pour que tout ce passe bien et ne pas perdre de données :
-gitlab-backup restore BACKUP=1712843356_2024_04_11_14.1.8-ee_gitlab_backup.tar
-On cherche s'il ne reste pas de trace -> find / -name "*gitlab*"
-
 Liste des commandes :
 
 Vérifier installation de GitLab : dpkg -l | grep gitlab -> ça me retourne une info donc ça à été installer avec un gestionnaire de paquet
 On va apt-get update et ensuite apt-get install gitlab-ee -> ça ne marche pas on va donc vérifier que le dépot gitlab est correctement configuré en vérifiant sa présence soit dans :
 /etc/apt/sources.list soit dans /etc/apt/sources.list.d/ avec grep
-
-Reading package lists... Done
-Building dependency tree... Done
-Reading state information... Done
-The following packages will be upgraded:
-  gitlab-ee
-1 upgraded, 0 newly installed, 0 to remove and 3 not upgraded.
-Need to get 1 231 MB of archives.
-After this operation, 890 MB of additional disk space will be used.
-Get:1 https://packages.gitlab.com/gitlab/gitlab-ee/ubuntu jammy/main amd64 gitlab-ee amd64 16.10.2-ee.0 [1 231 MB]
-Fetched 1 231 MB in 38s (32,4 MB/s)
-(Reading database ... 529173 files and directories currently installed.)
-Preparing to unpack .../gitlab-ee_16.10.2-ee.0_amd64.deb ...
-gitlab preinstall: It seems you are upgrading from 14.1 to 16.10.
-gitlab preinstall: It is required to upgrade to the latest 16.7.x version first before proceeding.
-gitlab preinstall: Please follow the upgrade documentation at https://docs.gitlab.com/ee/update/#upgrading-to-a-new-major-version
-dpkg: error processing archive /var/cache/apt/archives/gitlab-ee_16.10.2-ee.0_amd64.deb (--unpack):
- new gitlab-ee package pre-installation script subprocess returned error exit status 1
-Errors were encountered while processing:
- /var/cache/apt/archives/gitlab-ee_16.10.2-ee.0_amd64.deb
-E: Sub-process /usr/bin/dpkg returned an error code (1)
+On trouve bien des fichiers, on va donc faire :
+curl https://packages.gitlab.com/install/repositories/gitlab/gitlab-ee/script.deb.sh | sudo bash
+On essaye d'installer mais ils nous dis de d'abord passer par les versions précédentes donc on va d'abord passer du 14 au 15 -> on va donc chercher les versions disponible avec apt-cache madison gitlab.ee -> je ne trouve pas la version que je souhaite -> Problèmes les versions que je dois installer avant la version finales n'est pas prise en compte avec ubuntu 22 faut revenir sur l'ancienne version pour pouvoir mettre à jour gitlab 

@@ -691,3 +691,26 @@ PG::CheckViolation: ERROR:  check constraint "check_70f294ef54" is violated by s
 /opt/gitlab/embedded/bin/bundle:23:in `load'
 /opt/gitlab/embedded/bin/bundle:23:in `<main>'
 Tasks: TOP => db:migrate
+
+Could not install the upgrades
+
+The upgrade has aborted. Your system could be in an unusable state. A
+recovery will run now (dpkg --configure -a).
+
+Setting up initramfs-tools (0.136ubuntu6.7) ...
+update-initramfs: deferring update (trigger activated)
+
+Processing triggers for initramfs-tools (0.136ubuntu6.7) ...
+update-initramfs: Generating /boot/initrd.img-5.4.0-176-generic
+Error 24 : Write error : cannot write compressed block
+E: mkinitramfs failure cpio 141 lz4 -9 -l 24
+update-initramfs: failed for /boot/initrd.img-5.4.0-176-generic with 1.
+dpkg: error processing package initramfs-tools (--configure):
+ installed initramfs-tools package post-installation script subprocess returned error exit status 1
+Errors were encountered while processing:
+ initramfs-tools
+
+Upgrade complete
+
+The upgrade has completed but there were errors during the upgrade
+process.

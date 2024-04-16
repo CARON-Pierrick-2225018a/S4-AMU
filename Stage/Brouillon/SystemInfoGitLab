@@ -289,3 +289,7 @@ Voici les étapes à suivre pour effectuer une mise à niveau avec pg_upgrade:
             Si vous n’avez pas démarré le nouveau cluster, l’ancien cluster n’a pas été modifié, sauf que, lorsque la liaison a démarré, un suffixe .old a été ajouté à $PGDATA/global/pg_control. Pour réutiliser l’ancien cluster, supprimez le suffixe .old de $PGDATA/global/pg_control ; Vous pouvez ensuite redémarrer l’ancien cluster.
 
             Si vous avez démarré le nouveau cluster, il a écrit dans des fichiers partagés et il n’est pas sûr d’utiliser l’ancien cluster. Dans ce cas, l’ancien cluster devra être restauré à partir d’une sauvegarde.
+
+            sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
+            wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
+            sudo apt-get update

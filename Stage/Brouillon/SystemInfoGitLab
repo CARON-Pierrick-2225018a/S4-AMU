@@ -293,3 +293,48 @@ Voici les étapes à suivre pour effectuer une mise à niveau avec pg_upgrade:
             sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
             wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
             sudo apt-get update
+
+            There was an error running gitlab-ctl reconfigure:
+
+rails_migration[gitlab-rails] (gitlab::database_migrations line 51) had an error: Mixlib::ShellOut::ShellCommandFailed: bash_hide_env[migrate gitlab-rails database] (gitlab::database_migrations line 18) had an error: Mixlib::ShellOut::ShellCommandFailed: Expected process to exit with [0], but received '1'
+---- Begin output of "bash"  ----
+STDOUT: rake aborted!
+ActiveRecord::ConnectionNotEstablished: could not connect to server: No such file or directory
+        Is the server running locally and accepting
+        connections on Unix domain socket "/var/opt/gitlab/postgresql/.s.PGSQL.5432"?
+/opt/gitlab/embedded/service/gitlab-rails/ee/app/models/license.rb:79:in `load_license'
+/opt/gitlab/embedded/service/gitlab-rails/ee/app/models/license.rb:54:in `block in current'
+/opt/gitlab/embedded/service/gitlab-rails/lib/gitlab/json_cache.rb:55:in `fetch'
+/opt/gitlab/embedded/service/gitlab-rails/ee/app/models/license.rb:54:in `current'
+/opt/gitlab/embedded/service/gitlab-rails/ee/app/models/license.rb:75:in `feature_available?'
+/opt/gitlab/embedded/service/gitlab-rails/ee/lib/ee/gitlab/auth/ldap/config.rb:19:in `_available_servers'
+/opt/gitlab/embedded/service/gitlab-rails/lib/gitlab/auth/ldap/config.rb:37:in `available_servers'
+/opt/gitlab/embedded/service/gitlab-rails/lib/gitlab/auth/ldap/config.rb:49:in `available_providers'
+/opt/gitlab/embedded/service/gitlab-rails/config/initializers/8_devise.rb:229:in `block in <top (required)>'
+/opt/gitlab/embedded/service/gitlab-rails/config/initializers/8_devise.rb:5:in `<top (required)>'
+/opt/gitlab/embedded/service/gitlab-rails/config/environment.rb:7:in `<top (required)>'
+/opt/gitlab/embedded/bin/bundle:23:in `load'
+/opt/gitlab/embedded/bin/bundle:23:in `<main>'
+
+Caused by:
+PG::ConnectionBad: could not connect to server: No such file or directory
+        Is the server running locally and accepting
+        connections on Unix domain socket "/var/opt/gitlab/postgresql/.s.PGSQL.5432"?
+/opt/gitlab/embedded/service/gitlab-rails/ee/app/models/license.rb:79:in `load_license'
+/opt/gitlab/embedded/service/gitlab-rails/ee/app/models/license.rb:54:in `block in current'
+/opt/gitlab/embedded/service/gitlab-rails/lib/gitlab/json_cache.rb:55:in `fetch'
+/opt/gitlab/embedded/service/gitlab-rails/ee/app/models/license.rb:54:in `current'
+/opt/gitlab/embedded/service/gitlab-rails/ee/app/models/license.rb:75:in `feature_available?'
+/opt/gitlab/embedded/service/gitlab-rails/ee/lib/ee/gitlab/auth/ldap/config.rb:19:in `_available_servers'
+/opt/gitlab/embedded/service/gitlab-rails/lib/gitlab/auth/ldap/config.rb:37:in `available_servers'
+/opt/gitlab/embedded/service/gitlab-rails/lib/gitlab/auth/ldap/config.rb:49:in `available_providers'
+/opt/gitlab/embedded/service/gitlab-rails/config/initializers/8_devise.rb:229:in `block in <top (required)>'
+/opt/gitlab/embedded/service/gitlab-rails/config/initializers/8_devise.rb:5:in `<top (required)>'
+/opt/gitlab/embedded/service/gitlab-rails/config/environment.rb:7:in `<top (required)>'
+/opt/gitlab/embedded/bin/bundle:23:in `load'
+/opt/gitlab/embedded/bin/bundle:23:in `<main>'
+Tasks: TOP => gitlab:db:configure => environment
+(See full trace by running task with --trace)
+STDERR:
+---- End output of "bash"  ----
+Ran "bash"  returned 1

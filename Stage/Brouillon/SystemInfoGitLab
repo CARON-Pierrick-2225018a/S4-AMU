@@ -106,4 +106,186 @@ Warning: Your gitlab.rb and gitlab-secrets.json files contain sensitive data
 and are not included in this backup. You will need these files to restore a backup.
 Please back them up manually.
 
-Nom de la backup 1712843356_2024_04_11_14.1.8-ee_gitlab_backup.tar 
+Nom de la backup 1712843356_2024_04_11_14.1.8-ee_gitlab_backup.tar
+
+
+ii  gitlab-ee                                  14.1.8-ee.0                                                                                   amd64        GitLab Enterprise Edition (including NGINX                                    , Postgres, Redis)
+Voici les étapes à suivre pour effectuer une mise à niveau avec pg_upgrade:
+
+    Si vous le souhaitez, déplacez l’ancien cluster
+
+    Si vous utilisez un répertoire d’installation spécifique à une version, par exemple /opt/PostgreSQL/16, vous n’avez pas besoin de déplacer l’ancien cluster. Les programmes d’installation graphiques utilisent tous des répertoires d’installation spécifiques à la version.
+
+    Si votre répertoire d’installation n’est pas spécifique à une version, par exemple /usr/local/pgsql, il est nécessaire de déplacer le répertoire d’installation actuel de PostgreSQL afin qu’il n’interfère pas avec la nouvelle installation de PostgreSQL. Une fois que le serveur PostgreSQL actuel est arrêté, il est prudent de renommer le répertoire d’installation de PostgreSQL ; En supposant que l’ancien répertoire est /usr/local/pgsql, vous pouvez faire :
+
+    mv /usr/local/pgsql /usr/local/pgsql.old
+
+    pour renommer le répertoire.
+
+    Pour les installations source, générez la nouvelle version
+
+    Générez la nouvelle source PostgreSQL avec des indicateurs configure compatibles avec l’ancien cluster. pg_upgrade pg_controldata pour vous assurer que tous les paramètres sont compatibles avant de commencer la mise à niveau.
+
+    Installer les nouveaux binaires PostgreSQL
+
+    Installez les fichiers binaires et les fichiers de support du nouveau serveur. pg_upgrade est inclus dans une installation par défaut.
+
+    Pour les installations source, si vous souhaitez installer le nouveau serveur dans un emplacement personnalisé, utilisez la variable prefix :
+
+    make prefix=/usr/local/pgsql.new install
+
+    Initialiser le nouveau cluster PostgreSQL
+
+    Initialisez le nouveau cluster à l’aide initdb. Encore une fois, utilisez des options initdb compatibles qui correspondent à l’ancien cluster. De nombreux programmes d’installation prédéfinis effectuent cette étape automatiquement. Il n’est pas nécessaire de démarrer le nouveau cluster.
+
+    Installer les fichiers d’objets partagés de l’extension
+
+    De nombreuses extensions et modules personnalisés, qu’ils proviennent de contrib ou d’une autre source, utilisent des fichiers d’objets partagés (ou DLL), par exemple pgcrypto.so. Si l’ancien cluster les utilisait, les fichiers d’objets partagés correspondant au nouveau binaire du serveur doivent être installés dans le nouveau cluster, généralement via des commandes du système d’exploitation. Ne chargez pas les définitions de schéma, par exemple, CREATE EXTENSION pgcrypto, car elles seront dupliquées à partir de l’ancien cluster. Si des mises à jour d’extension sont disponibles, pg_upgrade le signalerons et créerons un script qui pourra être exécuté ultérieurement pour les mettre à jour.
+
+    Copier des fichiers de recherche en texte intégral personnalisés
+
+    Copiez tous les fichiers de recherche en texte intégral personnalisés (dictionnaire, synonyme, dictionnaire des synonymes, mots vides) de l’ancien vers le nouveau cluster.
+
+    Ajuster l’authentification
+
+    pg_upgrade se connectera à l’ancien et au nouveau serveur plusieurs fois, vous voudrez donc peut-être définir l’authentification pour peer dans pg_hba.conf ou utiliser un fichier ~/.pgpass (voir Section 34.16).
+
+    Arrêtez les deux serveurs
+
+    Assurez-vous que les deux serveurs de base de données sont arrêtés en utilisant, sous Unix, par exemple :
+
+    pg_ctl -D /opt/PostgreSQL/12 stop
+    pg_ctl -D /opt/PostgreSQL/16 stop
+
+    ou sous Windows, en utilisant les noms de service appropriés :
+
+    NET STOP postgresql-12
+    NET STOP postgresql-16
+
+    Les serveurs de secours de réplication en continu et d’envoi de journaux doivent être en cours d’exécution pendant cet arrêt afin qu’ils reçoivent toutes les modifications.
+
+    Préparer les mises à niveau des serveurs de secours
+
+    Si vous mettez à niveau des serveurs de secours à l’aide des méthodes décrites à l’étape 11 de la section, vérifiez que les anciens serveurs de secours sont rattrapés par l’exécution de pg_controldata sur les anciens clusters principal et de secours. Vérifiez que les valeurs « Emplacement du dernier point de contrôle » correspondent dans tous les clusters. Assurez-vous également wal_level pas défini sur minimal dans le fichier postgresql.conf sur le nouveau cluster principal.
+
+    Exécuter pg_upgrade
+
+    Exécutez toujours le binaire pg_upgrade du nouveau serveur, pas l’ancien. pg_upgrade nécessite la spécification des répertoires de données et d’exécutables (bin) de l’ancien et du nouveau cluster. Vous pouvez également spécifier les valeurs de l’utilisateur et du port, et indiquer si vous souhaitez que les fichiers de données soient liés ou clonés au lieu du comportement de copie par défaut.
+
+    Si vous utilisez le mode liaison, la mise à niveau sera beaucoup plus rapide (pas de copie de fichiers) et utilisera moins d’espace disque, mais vous ne pourrez pas accéder à votre ancien cluster une fois que vous aurez démarré le nouveau cluster après la mise à niveau. Le mode Liaison nécessite également que l’ancien et le nouveau répertoire de données du cluster se trouvent dans le même système de fichiers. (Les tablespaces et pg_wal peuvent se trouver sur des systèmes de fichiers différents.) Le mode Cloner offre les mêmes avantages en termes de vitesse et d’espace disque, mais n’entraîne pas l’inutilisation de l’ancien cluster une fois le nouveau cluster démarré. Le mode clone nécessite également que l’ancien et le nouveau répertoire de données se trouvent dans le même système de fichiers. Ce mode n’est disponible que sur certains systèmes d’exploitation et systèmes de fichiers.
+
+    L’option --jobs permet d’utiliser plusieurs cœurs de processeur pour copier/lier des fichiers et pour vider et restaurer des schémas de base de données en parallèle ; Un bon point de départ est le nombre maximal de cœurs de processeur et d’espaces table. Cette option peut réduire considérablement le temps de mise à niveau d’un serveur multi-bases de données s’exécutant sur une machine multiprocesseur.
+
+    Pour les utilisateurs de Windows, vous devez être connecté à un compte d’administrateur, puis démarrer un shell en tant qu’utilisateur postgres et définir le chemin d’accès approprié :
+
+    RUNAS /USER:postgres "CMD.EXE"
+    SET PATH=%PATH%;C:\Program Files\PostgreSQL\16\bin;
+
+    puis exécutez pg_upgrade avec des répertoires entre guillemets, par exemple :
+
+    pg_upgrade.exe
+            --old-datadir "C:/Program Files/PostgreSQL/12/data"
+            --new-datadir "C:/Program Files/PostgreSQL/16/data"
+            --old-bindir "C:/Program Files/PostgreSQL/12/bin"
+            --new-bindir "C:/Program Files/PostgreSQL/16/bin"
+
+    Une fois démarré, pg_upgrade vérifiera que les deux clusters sont compatibles, puis effectuera la mise à niveau. Vous pouvez utiliser pg_upgrade --check pour effectuer uniquement les vérifications, même si l’ancien serveur est toujours en cours d’exécution. pg_upgrade --check indiquera également tous les ajustements manuels que vous devrez effectuer après la mise à niveau. Si vous comptez utiliser le mode lien ou clone, vous devez utiliser l’option --link ou --clone avec --check pour activer les vérifications spécifiques au mode. pg_upgrade nécessite une autorisation d’écriture dans le répertoire courant.
+
+    De toute évidence, personne ne doit accéder aux clusters pendant la mise à niveau. pg_upgrade exécute par défaut les serveurs sur le port 50432 pour éviter les connexions client involontaires. Vous pouvez utiliser le même numéro de port pour les deux clusters lors d’une mise à niveau, car l’ancien et le nouveau cluster ne s’exécuteront pas en même temps. Cependant, lors de la vérification d’un ancien serveur en cours d’exécution, l’ancien et le nouveau numéro de port doivent être différents.
+
+    Si une erreur se produit lors de la restauration du schéma de base de données, pg_upgrade fermez et vous devez revenir à l’ancien cluster, comme indiqué à l’étape 17 ci-dessous. Pour pg_upgrade, vous devez modifier l’ancien cluster afin que la restauration du schéma pg_upgrade réussisse. Si le problème provient d’un module contrib, vous devrez peut-être désinstaller le module contrib de l’ancien cluster et l’installer dans le nouveau cluster après la mise à niveau, en supposant que le module n’est pas utilisé pour stocker les données utilisateur.
+
+    Mise à niveau des serveurs de secours de réplication en continu et de copie des journaux
+
+    Si vous avez utilisé le mode liaison et que vous disposez de serveurs de secours de réplication en continu (voir Section 27.2.5) ou de Log-Shipping (voir Section 27.2), vous pouvez suivre ces étapes pour les mettre à niveau rapidement. Vous n’exécuterez pas pg_upgrade sur les serveurs de secours, mais plutôt rsync sur le serveur principal. Ne démarrez pas encore de serveurs.
+
+    Si vous n’avez pas utilisé le mode liaison, si vous n’avez pas ou ne souhaitez pas utiliser rsync, ou si vous souhaitez une solution plus simple, ignorez les instructions de cette section et recréez simplement les serveurs de secours une fois que pg_upgrade est terminée et que le nouveau serveur principal est en cours d’exécution.
+
+        Installer les nouveaux binaires PostgreSQL sur les serveurs de secours
+
+        Assurez-vous que les nouveaux fichiers binaires et les fichiers de prise en charge sont installés sur tous les serveurs de secours.
+
+        Assurez-vous que les nouveaux répertoires de données de secours n’existent pas
+
+        Assurez-vous que les nouveaux répertoires de données de secours n’existent pas ou sont vides. Si initdb a été exécuté, supprimez les nouveaux répertoires de données des serveurs de secours.
+
+        Installer les fichiers d’objets partagés de l’extension
+
+        Installez les mêmes fichiers d’objets partagés d’extension sur les nouveaux serveurs de secours que ceux que vous avez installés dans le nouveau cluster principal.
+
+        Arrêter les serveurs de secours
+
+        Si les serveurs de secours sont toujours en cours d’exécution, arrêtez-les maintenant en suivant les instructions ci-dessus.
+
+        Enregistrer les fichiers de configuration
+
+        Enregistrez tous les fichiers de configuration des anciens répertoires de configuration des anciens serveurs de secours que vous devez conserver, par exemple, postgresql.conf (et tous les fichiers qu’il contient), postgresql.auto.conf, pg_hba.conf, car ils seront écrasés ou supprimés à l’étape suivante.
+
+        Exécuter rsync
+
+        Lors de l’utilisation du mode liaison, les serveurs de secours peuvent être rapidement mis à niveau à l’aide de rsync. Pour ce faire, à partir d’un répertoire du serveur principal qui se trouve au-dessus de l’ancien et du nouveau répertoire du cluster de base de données, exécutez ceci sur le serveur principal pour chaque serveur de secours :
+
+        rsync --archive --delete --hard-links --size-only --no-inc-recursive old_cluster new_cluster remote_dir
+
+        où old_cluster et new_cluster sont relatifs au répertoire actuel sur le répertoire principal, et remote_dir est au-dessus de l’ancien et du nouveau répertoire de cluster sur le serveur de secours. La structure de répertoires sous les répertoires spécifiés sur le répertoire principal et les répertoires de secours doit correspondre. Consultez la page de manuel de rsync pour plus de détails sur la spécification du répertoire distant, par exemple,
+
+        rsync --archive --delete --hard-links --size-only --no-inc-recursive /opt/PostgreSQL/12 \
+              /opt/PostgreSQL/16 standby.example.com:/opt/PostgreSQL
+
+        Vous pouvez vérifier ce que la commande fera en utilisant l’option --dry-run de rsync. Bien que rsync doive être exécuté sur le serveur principal pour au moins un serveur de secours, il est possible d’exécuter rsync sur un serveur de secours mis à niveau pour mettre à niveau d’autres serveurs de secours, tant que le serveur de secours mis à niveau n’a pas été démarré.
+
+        Cela permet d’enregistrer les liens créés par le mode de liaison de pg_upgrade qui connectent les fichiers de l’ancien et du nouveau cluster sur le serveur principal. Il recherche ensuite les fichiers correspondants dans l’ancien cluster de secours et crée des liens pour eux dans le nouveau cluster de secours. Les fichiers qui n’ont pas été liés sur le serveur principal sont copiés du serveur principal vers le serveur de secours. (Ils sont généralement petits.) Cela permet des mises à niveau rapides en veille. Malheureusement, rsync copie inutilement les fichiers associés aux tables temporaires et non journalisées, car ces fichiers n’existent normalement pas sur les serveurs de secours.
+
+        Si vous avez des tablespaces, vous devrez exécuter une commande rsync similaire pour chaque répertoire tablespace, par exemple :
+
+        rsync --archive --delete --hard-links --size-only --no-inc-recursive /vol1/pg_tblsp/PG_12_201909212 \
+              /vol1/pg_tblsp/PG_16_202307071 standby.example.com:/vol1/pg_tblsp
+
+        Si vous avez déplacé pg_wal en dehors des répertoires de données, rsync doit également être exécuté sur ces répertoires.
+
+        Configurer la réplication en continu et les serveurs de secours de consignation des journaux
+
+        Configurez les serveurs pour la copie des journaux de transaction. (Vous n’avez pas besoin d’exécuter pg_backup_start() et pg_backup_stop() ou d’effectuer une sauvegarde du système de fichiers, car les serveurs de secours sont toujours synchronisés avec le serveur principal.) Les emplacements de réplication ne sont pas copiés et doivent être recréés.
+
+    Restaurer pg_hba.conf
+
+    Si vous avez modifié pg_hba.conf, restaurez ses paramètres d’origine. Il peut également être nécessaire d’ajuster d’autres fichiers de configuration dans le nouveau cluster pour qu’ils correspondent à l’ancien cluster, par exemple, postgresql.conf (et tous les fichiers qu’il inclut), postgresql.auto.conf.
+
+    Démarrer le nouveau serveur
+
+    Le nouveau serveur peut maintenant être démarré en toute sécurité, puis tous les serveurs de secours rsync.
+
+    Traitement post-mise à niveau
+
+    Si un traitement post-mise à niveau est nécessaire, pg_upgrade émettra des avertissements au fur et à mesure qu’il se termine. Il générera également des fichiers de script qui doivent être exécutés par l’administrateur. Les fichiers de script se connectent à chaque base de données qui nécessite un traitement post-mise à niveau. Chaque script doit être exécuté à l’aide de :
+
+    psql --username=postgres --file=script.sql postgres
+
+    Les scripts peuvent être exécutés dans n’importe quel ordre et peuvent être supprimés une fois qu’ils ont été exécutés.
+    Prudence
+
+    En général, il n’est pas sûr d’accéder aux tables référencées dans les scripts de reconstruction tant que les scripts de reconstruction n’ont pas été exécutés jusqu’à la fin ; Cela pourrait donner des résultats incorrects ou de mauvaises performances. Les tables qui ne sont pas référencées dans les scripts de reconstruction sont immédiatement accessibles.
+
+    Statistiques
+
+    Étant donné que les statistiques de l’optimiseur ne sont pas transférées par pg_upgrade, vous serez invité à exécuter une commande pour régénérer ces informations à la fin de la mise à niveau. Vous devrez peut-être définir les paramètres de connexion pour qu’ils correspondent à votre nouveau cluster.
+
+    Supprimer l’ancien cluster
+
+    Une fois que vous êtes satisfait de la mise à niveau, vous pouvez supprimer les répertoires de données de l’ancien cluster en exécutant le script mentionné à la fin pg_upgrade. (La suppression automatique n’est pas possible si vous avez des tablespaces définis par l’utilisateur dans l’ancien répertoire de données.) Vous pouvez également supprimer les anciens répertoires d’installation (bin exemple, bin, share).
+
+    Revenir à l’ancien cluster
+
+    Si, après avoir exécuté pg_upgrade, vous souhaitez revenir à l’ancien cluster, plusieurs options s’offrent à vous :
+
+        Si l’option --check était utilisée, l’ancien cluster n’était pas modifié ; Il peut être redémarré.
+
+        Si l’option --link n’était pas utilisée, l’ancien cluster n’était pas modifié ; Il peut être redémarré.
+
+        Si l’option --link a été utilisée, les fichiers de données peuvent être partagés entre l’ancien et le nouveau cluster :
+
+            Si pg_upgrade abandonné avant le début de la liaison, l’ancien cluster n’a pas été modifié. Il peut être redémarré.
+
+            Si vous n’avez pas démarré le nouveau cluster, l’ancien cluster n’a pas été modifié, sauf que, lorsque la liaison a démarré, un suffixe .old a été ajouté à $PGDATA/global/pg_control. Pour réutiliser l’ancien cluster, supprimez le suffixe .old de $PGDATA/global/pg_control ; Vous pouvez ensuite redémarrer l’ancien cluster.
+
+            Si vous avez démarré le nouveau cluster, il a écrit dans des fichiers partagés et il n’est pas sûr d’utiliser l’ancien cluster. Dans ce cas, l’ancien cluster devra être restauré à partir d’une sauvegarde.

@@ -38,3 +38,18 @@ Début 9h -> Jenkins plusieurs problèmes pour faire la mise à jour avec diffé
 12/04/2024
 
 Télétravail -> Mettre en place jenkins toute la journée
+
+
+Semaine 2
+
+15/04/2024
+
+Début 9h40 -> Recherche sur la mise à jour de Gitlab
+        10h -> On effectue les premiers test pour voir si tout fonctionne
+        12h -> Premier problème il faut passer par des versions qui ne sont plus supporté sur Ubuntu 22.04
+        12h30 - 13h30 -> Pause déjeuner
+        14h -> J'essaye de faire les mises à jour manuellement pour ne pas avoir à revenir sur la version précédente
+        16h -> abandon de la méthode manuelle trop compliqué pas assez fiable
+        16h30 -> retour sur le snapshot avec ubuntu 18
+        17h -> mise en place d'ubuntu 20
+        18h30 -> fin d'instalation de ubuntu  

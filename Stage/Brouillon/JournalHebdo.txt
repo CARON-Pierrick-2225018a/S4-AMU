@@ -56,9 +56,16 @@ Début 9h40 -> Recherche sur la mise à jour de Gitlab
 
 16/04/2024
 
-Début 9h30 -> Ce matin on va mettre gitlab à jour étape par étape il y en a 10
-      10h -> La première c passer sans problème on va essayer de faire les 10 ce matin et regarder si je fais la mise à jour de jenkins par la même occasion avant de remettre à jour l'OS ubuntu
-      11h -> Plus de la moitié des étapes on était effectué
-      12 -> Problèmes avec la base de données faut repartir de zéro parce qu'oublie de faire la backup au bon moment
-      12h-13h -> Pause déjeuner
-      13h -> reprise avec l'installation de l'OS de nouveau 
+Début 9h30 -> Ce matin on va mettre gitlab à jour
+      10h -> Début de la première upgrade
+      11h30 -> Problèmes avec la bd donc imposibble de continuer il faut tout recommencer
+      12h -> On remet sur ubuntu 18 pour refaire la mise à jour
+      14h -> Lancement de la mise jour
+      16h -> Problèmes avec initramfs qui ne veut plus fonctionner il faut encore recommencer
+      16h30 -> journée compliqué rien n'a marcher comme prévu
+
+17/04/2024
+
+Début 8h30 -> Je vais me refaire la mise à jour tôt ce matin faire une backup une fois que c'est fait et ensuite ce concentrer sur gitlab
+      10h -> Nouveau problème pas assez de place sur la partition de boot et plus j'essaye de libérer de la place plus ça me demande encore plus de place donc on va devoir encore tout recommencer.
+      10h30 -> relance de la maj cette fois aucun soucis pour démarer on verra quand elle sera fini 

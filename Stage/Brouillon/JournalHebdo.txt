@@ -68,4 +68,9 @@ Début 9h30 -> Ce matin on va mettre gitlab à jour
 
 Début 8h30 -> Je vais me refaire la mise à jour tôt ce matin faire une backup une fois que c'est fait et ensuite ce concentrer sur gitlab
       10h -> Nouveau problème pas assez de place sur la partition de boot et plus j'essaye de libérer de la place plus ça me demande encore plus de place donc on va devoir encore tout recommencer.
-      10h30 -> relance de la maj cette fois aucun soucis pour démarer on verra quand elle sera fini 
+      10h30 -> relance de la maj cette fois aucun soucis pour démarer on verra quand elle sera fini
+      12h -> Mise à jour c'est bien passé on va faire un snapshot comme ça plus besoin de la refaire
+      13h -> On a fait le snapshot comme ça plus de soucis d'upgrade à faire
+      13h30 -> On commence à lancer les étapes de l'installation de gitlab jusqu'à la version 15.4.6 et tout c'est bien passer
+      16h -> on a pris un snapshot jusqu'à la version 15.4.6 et ensuite j'ai continuer tout fonctionne jusqu'à la version 16.3.7
+      16h30 -> pb avec la version 16.7.7 donc on va recommencer faire un snapshot à la version 16.3.7 et ensuite essayer de régler le problème de la version (encore avec la base de données )

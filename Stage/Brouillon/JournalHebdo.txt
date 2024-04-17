@@ -52,4 +52,13 @@ Début 9h40 -> Recherche sur la mise à jour de Gitlab
         16h -> abandon de la méthode manuelle trop compliqué pas assez fiable
         16h30 -> retour sur le snapshot avec ubuntu 18
         17h -> mise en place d'ubuntu 20
-        18h30 -> fin d'instalation de ubuntu  
+        18h30 -> fin d'instalation de ubuntu
+
+16/04/2024
+
+Début 9h30 -> Ce matin on va mettre gitlab à jour étape par étape il y en a 10
+      10h -> La première c passer sans problème on va essayer de faire les 10 ce matin et regarder si je fais la mise à jour de jenkins par la même occasion avant de remettre à jour l'OS ubuntu
+      11h -> Plus de la moitié des étapes on était effectué
+      12 -> Problèmes avec la base de données faut repartir de zéro parce qu'oublie de faire la backup au bon moment
+      12h-13h -> Pause déjeuner
+      13h -> reprise avec l'installation de l'OS de nouveau 

@@ -74,3 +74,8 @@ Début 8h30 -> Je vais me refaire la mise à jour tôt ce matin faire une backup
       13h30 -> On commence à lancer les étapes de l'installation de gitlab jusqu'à la version 15.4.6 et tout c'est bien passer
       16h -> on a pris un snapshot jusqu'à la version 15.4.6 et ensuite j'ai continuer tout fonctionne jusqu'à la version 16.3.7
       16h30 -> pb avec la version 16.7.7 donc on va recommencer faire un snapshot à la version 16.3.7 et ensuite essayer de régler le problème de la version (encore avec la base de données )
+      18h -> Version 16.3.7 est le snapshot à était fait demain on s'occupe d'upgrade la bd et de finir les dernières installation
+
+18/04/2024
+
+Début 9h -> Ce matin je me suis occupé de mettre à jour la base de données pour ensuite pouvoir mettre à jour les dernières versions de gitlab donc passer de la 16.3.7 à la 16.10.2 

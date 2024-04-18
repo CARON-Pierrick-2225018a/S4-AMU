@@ -78,4 +78,8 @@ Début 8h30 -> Je vais me refaire la mise à jour tôt ce matin faire une backup
 
 18/04/2024
 
-Début 9h -> Ce matin je me suis occupé de mettre à jour la base de données pour ensuite pouvoir mettre à jour les dernières versions de gitlab donc passer de la 16.3.7 à la 16.10.3 
+Début 9h -> Ce matin je me suis occupé de mettre à jour la base de données pour ensuite pouvoir mettre à jour les dernières versions de gitlab donc passer de la 16.3.7 à la 16.10.3
+    14h -> cet aprem on a fixer le rendez vous pour faire la procédure de mise à jour en production et je me suis concentré sur l'installation de jenkins
+
+19/04/2024
+    Essayer de faire la mise à jour de jenkins comme ça tout est bon puis mettre à jour l'os comme ça tout est nicjel

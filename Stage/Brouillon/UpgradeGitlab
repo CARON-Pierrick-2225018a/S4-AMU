@@ -23,8 +23,9 @@ Différentes étapes de l'upgrade (Il y en a 10) : apt-get install gitlab-ee=14.
                                                  apt-get install gitlab-ee=16.1.6-ee.0
                                                  apt-get install gitlab-ee=16.3.7-ee.0
                                                  gitlab-ctl pg-upgrade -V 14 -> Pour upgrade la bd de la version 13 a 14
-                                                 Et supprimer les fichiers qui demande à la fin 
+                                                 Et supprimer les fichiers qui demande à la fin
                                                  apt-get install gitlab-ee=16.7.7-ee.0
                                                  apt-get install gitlab-ee=16.10.2-ee.0
+                                                 apt-get install gitlab-ee=16.10.3-ee.0
 
 Après chaque installation vérifier le status avec gitlab-ctl status

@@ -78,4 +78,4 @@ Début 8h30 -> Je vais me refaire la mise à jour tôt ce matin faire une backup
 
 18/04/2024
 
-Début 9h -> Ce matin je me suis occupé de mettre à jour la base de données pour ensuite pouvoir mettre à jour les dernières versions de gitlab donc passer de la 16.3.7 à la 16.10.2 
+Début 9h -> Ce matin je me suis occupé de mettre à jour la base de données pour ensuite pouvoir mettre à jour les dernières versions de gitlab donc passer de la 16.3.7 à la 16.10.3 

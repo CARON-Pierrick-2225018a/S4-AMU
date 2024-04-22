@@ -27,5 +27,6 @@ Différentes étapes de l'upgrade (Il y en a 10) : apt-get install gitlab-ee=14.
                                                  apt-get install gitlab-ee=16.7.7-ee.0
                                                  apt-get install gitlab-ee=16.10.2-ee.0
                                                  apt-get install gitlab-ee=16.10.3-ee.0
+                                                 apt-get install gitlab-ee
 
 Après chaque installation vérifier le status avec gitlab-ctl status

@@ -1,36 +1,10 @@
-Check Version Java et Javac -> java -version
-                               javac -version
+Donc on commence dans la partie UI par faire l'installation des plug-ins
 
-Ensuite on va installer la bonne version de java -> apt update
-                                                 -> apt install openjdk-17-jdk
+Ensuite On va stoper jenkins -> systemctl stop jenkins
+        Aller dans le fichier -> /usr/share/jenkins/
+        Modifie le nom du fichier jenkins.war en jenkins.war.old
+        wget le nouveau fichier et redémarrer jenkins
 
- Updating Environment Variables : export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
-                                  export PATH=$PATH:$JAVA_HOME/bin
-
-Verifying the Installation : echo $JAVA_HOME
-
-Si tout est OK : /usr/lib/jvm/java-17-openjdk-amd64
-
-Ensuite Java22 : export JAVA_HOME=/usr/lib/jvm/java-22-openjdk-amd64
-
-Une fois tout ça on passe à l'upgrade de jenkins
-
-Stopper Jenkins -> systemctl stop jenkins
-
-curl -fsSL https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo tee /usr/share/keyrings/jenkins-keyring.asc > /dev/null
-
-echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] https://pkg.jenkins.io/debian-stable binary/ | sudo tee /etc/apt/sources.list.d/jenkins.list > /dev/null
-
-sudo apt update
-
-sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 5BA31D57EF5975CA
-wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo apt-key add -
-
-
-sudo apt install jenkins
-
-sudo systemctl restart jenkins
-
-sudo systemctl daemon-reload
-
-sudo systemctl status jenkins
+Tout les versions que j'ai installer au fur et à mesure ->
+wget https://updates.jenkins.io/download/war/2.277.4/jenkins.war
+wget https://updates.jenkins.io/download/war/2.289.3/jenkins.war

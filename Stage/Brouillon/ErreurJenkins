@@ -1,0 +1,8 @@
+java.lang.NoSuchMethodError: 'void com.google.common.util.concurrent.Futures.addCallback(com.google.common.util.concurrent.ListenableFuture, com.google.common.util.concurrent.FutureCallback)'
+	at org.jenkinsci.plugins.workflow.flow.FlowExecutionList$ItemListenerImpl.onLoaded(FlowExecutionList.java:180)
+	at jenkins.model.Jenkins.<init>(Jenkins.java:1034)
+	at hudson.model.Hudson.<init>(Hudson.java:86)
+	at hudson.model.Hudson.<init>(Hudson.java:82)
+	at hudson.WebAppMain$3.run(WebAppMain.java:247)
+Caused: hudson.util.HudsonFailedToLoad
+	at hudson.WebAppMain$3.run(WebAppMain.java:261)

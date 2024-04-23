@@ -8,3 +8,9 @@ Ensuite On va stoper jenkins -> systemctl stop jenkins
 Tout les versions que j'ai installer au fur et à mesure ->
 wget https://updates.jenkins.io/download/war/2.277.4/jenkins.war
 wget https://updates.jenkins.io/download/war/2.289.3/jenkins.war
+Mettre à jour les plug in UI
+wget https://updates.jenkins.io/download/war/2.299/jenkins.war
+wget https://updates.jenkins.io/download/war/2.309/jenkins.war
+wget https://updates.jenkins.io/download/war/2.319.3/jenkins.war
+Mettre à jour sur java 17 : apt install openjdk-17-jdk openjdk-17-jre
+wget https://updates.jenkins.io/download/war/2.329/jenkins.war

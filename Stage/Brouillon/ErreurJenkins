@@ -6,3 +6,13 @@ java.lang.NoSuchMethodError: 'void com.google.common.util.concurrent.Futures.add
 	at hudson.WebAppMain$3.run(WebAppMain.java:247)
 Caused: hudson.util.HudsonFailedToLoad
 	at hudson.WebAppMain$3.run(WebAppMain.java:261)
+
+	There are 4 choices for the alternative java (providing /usr/bin/java).
+
+  Selection    Path                                         Priority   Status
+------------------------------------------------------------
+  0            /usr/lib/jvm/java-11-openjdk-amd64/bin/java   1111      auto mode
+* 1            /usr/lib/jvm/java-11-openjdk-amd64/bin/java   1111      manual mode
+  2            /usr/lib/jvm/java-7-oracle/jre/bin/java       1074      manual mode
+  3            /usr/lib/jvm/java-8-oracle/jre/bin/java       1081      manual mode
+  4            /usr/lib/jvm/jdk-17.0.11/bin/java             1         manual mode

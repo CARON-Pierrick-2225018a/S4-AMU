@@ -83,3 +83,19 @@ Début 9h -> Ce matin je me suis occupé de mettre à jour la base de données p
 
 19/04/2024
     Essayer de faire la mise à jour de jenkins comme ça tout est bon puis mettre à jour l'os comme ça tout est nicjel
+
+
+Semaine 3
+
+22/04/2024
+
+Début 9h30 -> Cette semaine on va principalement ce concentré sur l'upgrade de jenkins, j'ai donc regarder la doc pour me renseigner et je vais faire pareil qu'avec gitlab c'est à dire au fur et à mesure
+      10h -> pour faire simple il faut en gros changer le fichier de config et mettre le nouveau et normalement tout fonctionne dans la partie théorique
+      11h -> Préparation des commandes pour cette aprem que tout ce passe bien
+      14h -> J'arrive à passer de la version 2.26 à la 2.27 sans souci
+      15h -> et maintenant je passe à la version 2.289.3
+      16h -> demain faudra lancer l'installation des mises à jour des plugs in
+
+23/04/2024
+
+Début 9h30 -> lancement des mises à jour des plugs in avec pour l'instant aucun problème  

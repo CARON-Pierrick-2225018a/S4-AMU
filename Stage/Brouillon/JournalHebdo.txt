@@ -98,4 +98,9 @@ Début 9h30 -> Cette semaine on va principalement ce concentré sur l'upgrade de
 
 23/04/2024
 
-Début 9h30 -> lancement des mises à jour des plugs in avec pour l'instant aucun problème  
+Durant cette journée j'ai continuer à mettre à jour au fur et mesure jenkins jusqu'à la version 2.359 ce qui m'a pris quasiment toute la journée, j'ai aussi continuer à écrire un rapport quotidien pour ne pas me perdre dans mes journées et à la fin de la journée après que j'ai voulu refaire un upgrade de jenkins je me suis rendu compte qu'il y avait une erreur mais je ne sais pas encore d'où elle provient si c'est la version de java ou autre chose faudra s'en occuper demain
+
+24/04/2024
+
+Ce matin on a fixer le RDV pour l'upgrade de jenkins ce sera donc le 13 mai et je m'occupe principalement de pourquoi jenkins ne veut pas s'upgrade et normalement ça ne vient pas de la version java donc faut trouver d'où ça peut venir
+ 

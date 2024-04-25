@@ -16,3 +16,72 @@ Caused: hudson.util.HudsonFailedToLoad
   2            /usr/lib/jvm/java-7-oracle/jre/bin/java       1074      manual mode
   3            /usr/lib/jvm/java-8-oracle/jre/bin/java       1081      manual mode
   4            /usr/lib/jvm/jdk-17.0.11/bin/java             1         manual mode
+
+
+  com.thoughtworks.xstream.mapper.CannotResolveClassException: hudson.security.GlobalMatrixAuthorizationStrategy
+  	at com.thoughtworks.xstream.mapper.DefaultMapper.realClass(DefaultMapper.java:81)
+  	at com.thoughtworks.xstream.mapper.MapperWrapper.realClass(MapperWrapper.java:125)
+  	at com.thoughtworks.xstream.mapper.DynamicProxyMapper.realClass(DynamicProxyMapper.java:55)
+  	at com.thoughtworks.xstream.mapper.MapperWrapper.realClass(MapperWrapper.java:125)
+  	at com.thoughtworks.xstream.mapper.PackageAliasingMapper.realClass(PackageAliasingMapper.java:88)
+  	at com.thoughtworks.xstream.mapper.MapperWrapper.realClass(MapperWrapper.java:125)
+  	at com.thoughtworks.xstream.mapper.ClassAliasingMapper.realClass(ClassAliasingMapper.java:79)
+  	at com.thoughtworks.xstream.mapper.MapperWrapper.realClass(MapperWrapper.java:125)
+  	at com.thoughtworks.xstream.mapper.ArrayMapper.realClass(ArrayMapper.java:74)
+  	at com.thoughtworks.xstream.mapper.MapperWrapper.realClass(MapperWrapper.java:125)
+  	at com.thoughtworks.xstream.mapper.SecurityMapper.realClass(SecurityMapper.java:71)
+  	at com.thoughtworks.xstream.mapper.MapperWrapper.realClass(MapperWrapper.java:125)
+  	at hudson.util.XStream2$CompatibilityMapper.realClass(XStream2.java:411)
+  	at hudson.util.xstream.MapperDelegate.realClass(MapperDelegate.java:46)
+  	at com.thoughtworks.xstream.mapper.MapperWrapper.realClass(MapperWrapper.java:125)
+  	at com.thoughtworks.xstream.mapper.CachingMapper.realClass(CachingMapper.java:47)
+  	at hudson.util.RobustReflectionConverter.determineType(RobustReflectionConverter.java:523)
+  	at hudson.util.RobustReflectionConverter.doUnmarshal(RobustReflectionConverter.java:348)
+  Caused: jenkins.util.xstream.CriticalXStreamException:
+  ---- Debugging information ----
+  cause-exception     : com.thoughtworks.xstream.mapper.CannotResolveClassException
+  cause-message       : hudson.security.GlobalMatrixAuthorizationStrategy
+  class               : hudson.model.Hudson
+  required-type       : hudson.model.Hudson
+  converter-type      : hudson.util.RobustReflectionConverter
+  path                : /hudson/authorizationStrategy
+  line number         : 13
+  version             : not available
+  -------------------------------
+  	at hudson.util.RobustReflectionConverter.doUnmarshal(RobustReflectionConverter.java:383)
+  	at hudson.util.RobustReflectionConverter.unmarshal(RobustReflectionConverter.java:291)
+  	at com.thoughtworks.xstream.core.TreeUnmarshaller.convert(TreeUnmarshaller.java:74)
+  	at com.thoughtworks.xstream.core.AbstractReferenceUnmarshaller.convert(AbstractReferenceUnmarshaller.java:72)
+  	at com.thoughtworks.xstream.core.TreeUnmarshaller.convertAnother(TreeUnmarshaller.java:68)
+  	at com.thoughtworks.xstream.core.TreeUnmarshaller.convertAnother(TreeUnmarshaller.java:52)
+  	at com.thoughtworks.xstream.core.TreeUnmarshaller.start(TreeUnmarshaller.java:136)
+  	at com.thoughtworks.xstream.core.AbstractTreeMarshallingStrategy.unmarshal(AbstractTreeMarshallingStrategy.java:32)
+  	at com.thoughtworks.xstream.XStream.unmarshal(XStream.java:1421)
+  	at hudson.util.XStream2.unmarshal(XStream2.java:189)
+  	at hudson.util.XStream2.unmarshal(XStream2.java:160)
+  	at com.thoughtworks.xstream.XStream.unmarshal(XStream.java:1399)
+  	at hudson.XmlFile.unmarshal(XmlFile.java:196)
+  Caused: java.io.IOException: Unable to read /var/lib/jenkins/config.xml
+  	at hudson.XmlFile.unmarshal(XmlFile.java:199)
+  	at hudson.XmlFile.unmarshal(XmlFile.java:179)
+  	at jenkins.model.Jenkins.loadConfig(Jenkins.java:3297)
+  	at jenkins.model.Jenkins$12.run(Jenkins.java:3399)
+  	at org.jvnet.hudson.reactor.TaskGraphBuilder$TaskImpl.run(TaskGraphBuilder.java:175)
+  	at org.jvnet.hudson.reactor.Reactor.runTask(Reactor.java:305)
+  	at jenkins.model.Jenkins$5.runTask(Jenkins.java:1159)
+  	at org.jvnet.hudson.reactor.Reactor$2.run(Reactor.java:222)
+  	at org.jvnet.hudson.reactor.Reactor$Node.run(Reactor.java:121)
+  	at jenkins.security.ImpersonatingExecutorService$1.run(ImpersonatingExecutorService.java:70)
+  	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+  	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+  	at java.base/java.lang.Thread.run(Thread.java:829)
+  Caused: org.jvnet.hudson.reactor.ReactorException
+  	at org.jvnet.hudson.reactor.Reactor.execute(Reactor.java:291)
+  	at jenkins.InitReactorRunner.run(InitReactorRunner.java:49)
+  	at jenkins.model.Jenkins.executeReactor(Jenkins.java:1194)
+  	at jenkins.model.Jenkins.<init>(Jenkins.java:984)
+  	at hudson.model.Hudson.<init>(Hudson.java:86)
+  	at hudson.model.Hudson.<init>(Hudson.java:82)
+  	at hudson.WebAppMain$3.run(WebAppMain.java:247)
+  Caused: hudson.util.HudsonFailedToLoad
+  	at hudson.WebAppMain$3.run(WebAppMain.java:264)

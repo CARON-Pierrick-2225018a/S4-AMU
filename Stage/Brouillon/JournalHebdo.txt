@@ -102,5 +102,12 @@ Durant cette journée j'ai continuer à mettre à jour au fur et mesure jenkins 
 
 24/04/2024
 
-Ce matin on a fixer le RDV pour l'upgrade de jenkins ce sera donc le 13 mai et je m'occupe principalement de pourquoi jenkins ne veut pas s'upgrade et normalement ça ne vient pas de la version java donc faut trouver d'où ça peut venir
- 
+Ce matin on a fixer le RDV pour l'upgrade de gitlab ce sera donc le 13 mai et je m'occupe principalement de pourquoi jenkins ne veut pas s'upgrade et normalement ça ne vient pas de la version java donc faut trouver d'où ça peut venir
+
+25/04/2024
+
+J'arriva à aller jusqu'à la versin 2.362 de jenkins mais après je me retrouve confornter toujours au même problème et je ne sais pas d'où ça peut venir malgré l'aide sur les forums, j'ai passé ma journée à tester plusieurs point mais sans succès pour l'instant.
+
+26/04/2024
+
+On va encore ce concentrer sur les beug de jenkins je vais essayer de mettre à jour java et de faire en sorte que jenkins le prenne en compte mais après les vérifications la version de java est normalement compatible.

@@ -15,4 +15,6 @@ wget https://updates.jenkins.io/download/war/2.319.3/jenkins.war
 Mettre à jour sur java 17 : apt install openjdk-17-jdk openjdk-17-jre
 wget https://updates.jenkins.io/download/war/2.329/jenkins.war
 wget https://updates.jenkins.io/download/war/2.359/jenkins.war
-wget https://updates.jenkins.io/download/war/2.369/jenkins.war
+wget https://updates.jenkins.io/download/war/2.361/jenkins.war
+wget https://updates.jenkins.io/download/war/2.362/jenkins.war
+wget https://updates.jenkins.io/download/war/latest/jenkins.war

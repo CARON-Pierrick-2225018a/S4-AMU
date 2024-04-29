@@ -1,0 +1,32 @@
+#!/bin/bash
+
+# Vérifier la version actuelle de GitLab
+gitlab-rake gitlab:env:info
+
+# Télécharger les paquets
+curl -sS https://packages.gitlab.com/install/repositories/gitlab/gitlab-ee/script.deb.sh | sudo bash
+
+# Mettre à jour les dépôts
+sudo apt-get update
+
+# Installer une version spécifique de GitLab
+sudo apt-get install -y gitlab-ee=14.3.6-ee.0
+sudo apt-get install -y gitlab-ee=14.9.5-ee.0
+sudo apt-get install -y gitlab-ee=14.10.5-ee.0
+sudo apt-get install -y gitlab-ee=15.0.5-ee.0
+sudo apt-get install -y gitlab-ee=15.4.6-ee.0
+sudo apt-get install -y gitlab-ee=15.11.13-ee.0
+sudo apt-get install -y gitlab-ee=16.1.6-ee.0
+sudo apt-get install -y gitlab-ee=16.3.7-ee.0
+
+# Mettre à jour la base de données de la version 13 à 14
+sudo gitlab-ctl pg-upgrade -V 14
+
+# Supprimer les fichiers demandés à la fin de la mise à jour
+
+# Continuer avec les mises à jour restantes
+sudo apt-get install -y gitlab-ee=16.7.7-ee.0
+sudo apt-get install -y gitlab-ee=16.10.2-ee.0
+
+# Vérifier l'état de GitLab après chaque installation
+sudo gitlab-ctl status

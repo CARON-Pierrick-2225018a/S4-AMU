@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Form</title>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script>
+        function onSubmit(token) {
+            document.getElementById("test-form").submit();
+        }
+    </script>
+</head>
+<body>
+    <h2>Test Form</h2>
+    <form id="test-form" action="subscribe.php" method="POST">
+        <!-- Add your input fields here -->
+        <input type="text" name="SUBED2" placeholder="SUBED2" required><br>
+        <input type="text" name="A" placeholder="A" required><br>
+        <input type="text" name="L" placeholder="L" required><br>
+        <input type="text" name="p" placeholder="p" required><br>
+        <input type="text" name="q" placeholder="q" required><br>
+        <input type="text" name="s" placeholder="s" required><br>
+        <input type="text" name="t" placeholder="t" required><br>
+        <input type="text" name="b" placeholder="b" required><br>
+        <input type="text" name="a" placeholder="a" required><br>
+        <input type="text" name="e" placeholder="e" required><br>
+        <input type="text" name="sub" placeholder="sub" required><br>
+        <input type="text" name="unsub" placeholder="unsub" required><br>
+        <input type="hidden" name="_charset_" value="utf-8">
+
+        <!-- reCAPTCHA -->
+        <div class="g-recaptcha" data-sitekey="VOTRE_SITE_KEY" data-callback="onSubmit" data-size="invisible"></div>
+
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

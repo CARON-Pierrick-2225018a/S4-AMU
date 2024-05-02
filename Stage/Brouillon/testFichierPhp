@@ -1,1 +1,3 @@
-Pour tester ce fichier php je vais créer une vm qui va sme servir de serveur web local apache pour je me sers de debian 12 avec le logiciels machine disponible sur manjaro. Pour faire ça je vais télécharger l'iso le maitre sur machine faire l'installation. Ensuite je vais créer mon serveur apache 
+Pour tester ce fichier php je vais créer une vm qui va sme servir de serveur web local apache pour je me sers de debian 12 avec le logiciels machine disponible sur manjaro. Pour faire ça je vais télécharger l'iso le maitre sur machine faire l'installation. Ensuite je vais créer mon serveur apache :
+lien vers la page apache
+Et une fois que j'ai fais ça je vais créer un formulaire de test html avec les champs requis dans le script et ensuite je teste sur le serveur local pour voir si tout fonctionne

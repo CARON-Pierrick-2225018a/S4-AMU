@@ -1,0 +1,17 @@
+Pour créer son serveur apache on va déjà installer apache :
+sudo apt update
+sudo apt install apache2
+ensuite on regarde le status pour voir si il run ou pas
+systemctl status apache2
+Ensuite aller sur un navigateur taper : http://localhost et si tout ce passe bien on voit une page apache2
+On va maintenant installer php :
+apt install php libapache2-mod-php php-mysql
+Ensuite on redémarre apache :
+systemctl restart apache2
+Et pour vérifer que ça fonctionne on va créer un fichier info.php dans le répertoire /var/www/html/ avec le contenu suivant :
+<?php
+phpinfo();
+?>
+Et pour s'assurer que ça marche navigateur : http://localhost/info.php
+
+Et voilà serveur apache fini pour pouvoir tester notre fichier 

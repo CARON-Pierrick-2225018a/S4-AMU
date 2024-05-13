@@ -28,5 +28,5 @@ sudo gitlab-ctl pg-upgrade -V 14
 sudo apt-get install -y gitlab-ee=16.7.7-ee.0
 sudo apt-get install -y gitlab-ee=16.10.2-ee.0
 
-# Vérifier l'état de GitLab après chaque installation
+# Vérifier l'état de GitLab après installation
 sudo gitlab-ctl status

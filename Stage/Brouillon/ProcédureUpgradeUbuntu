@@ -1,0 +1,11 @@
+apt update && apt upgrade -y
+nano /etc/initramfs-tools/initramfs.conf
+Change COMPRESS=gzip en COMPRESS=XY
+#Vérifier la liste des noyaux Linux installés :
+    dpkg --list | grep linux-image
+#Identifier le noyau actuellement utilisé :
+    uname -r
+#Supprimer les noyaux inutilisés :
+    sudo apt purge <nom_des_paquets>
+apt autoremove
+do-release-upgrade

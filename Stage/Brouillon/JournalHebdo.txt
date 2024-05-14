@@ -119,4 +119,10 @@ Semaine 4 :
 
 30/04/2024 -> Aujourd'hui je me suis occupé principalement de trouvé une solution mais sans succès
 
-02/05/2024 -> Aujourd'hui je m'occupe de tester un fichier php donc je vais créer une vm pour pouvoir le tester avec un serveur web local apache. Ensuite j'ai créer un fichier html de test et je fais des tests pour voir si tout fonctionner comme prévu  
+02/05/2024 -> Aujourd'hui je m'occupe de tester un fichier php donc je vais créer une vm pour pouvoir le tester avec un serveur web local apache. Ensuite j'ai créer un fichier html de test et je fais des tests pour voir si tout fonctionner comme prévu
+
+
+
+Semaine 5 :
+
+Pas le temps de faire enormément de chose en deux jours donc j'ai continuer à mettre à jour jenkins pendant deux jour en essyant de gérer les problèmes avec java 

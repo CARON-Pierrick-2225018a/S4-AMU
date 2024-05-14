@@ -125,4 +125,9 @@ Semaine 4 :
 
 Semaine 5 :
 
-Pas le temps de faire enormément de chose en deux jours donc j'ai continuer à mettre à jour jenkins pendant deux jour en essyant de gérer les problèmes avec java 
+Pas le temps de faire enormément de chose en deux jours donc j'ai continuer à mettre à jour jenkins pendant deux jour en essyant de gérer les problèmes avec java
+
+
+Semaine 6 :
+
+Lundi je me suis occupé de continuer la mise à jour de Jenkins et puis on sait occuper de mettre en production la mise à jour de gitlab mais on à eu un problème sur la version 15.11.13 donc on a pas pu aller jusqu'au bout, j'ai donc réésayé de le faire sur le serveur de test et là ça marche donc on va essayer de trouver une solution pour le mettre en production 

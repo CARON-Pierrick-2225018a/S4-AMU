@@ -85,3 +85,37 @@ Caused: hudson.util.HudsonFailedToLoad
   	at hudson.WebAppMain$3.run(WebAppMain.java:247)
   Caused: hudson.util.HudsonFailedToLoad
   	at hudson.WebAppMain$3.run(WebAppMain.java:264)
+
+
+	I managed to upgrade Jenkins to 2.458. However, I think we should start from scratch to make sure it works.
+	I started by upgrading plugins and Jenkins before updating config, but I had to change Apache config to use http instead of https. So, if we restore snapshot will need to switch back to https or disable https before it works again.
+
+	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	#Disable https and switch http port to 8087
+
+	nano /etc/systemd/system/jenkins.service.d/override.conf
+
+	[Service]
+	Environment="JAVA_OPTS=-Djava.awt.headless=true -Dhudson.model.DirectoryBrowserSupport.CSP=\"sandbox allow-scripts; default-src 'none'; img-src 'self' data: ; style-src 'self' 'unsafe-inline' data: ; script-src 'self' 'unsafe-inline' 'u>
+	Environment="JENKINS_PORT=8087"
+	Environment="JENKINS_PREFIX=/jenkins"
+
+	##############################################
+
+	nano /etc/default/jenkins (update following lines)
+
+	HTTP_PORT=8087
+	JENKINS_ARGS="--webroot=/var/cache/$NAME/war --httpPort=$HTTP_PORT --prefix=$PREFIX"
+
+	###############################################
+
+	Upgrade plugins and restart
+	Upgrade Jenkins https://www.jenkins.io/doc/book/installing/linux/
+
+	sudo wget -O /usr/share/keyrings/jenkins-keyring.asc \
+	  https://pkg.jenkins.io/debian/jenkins.io-2023.key
+	echo "deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc]" \
+	  https://pkg.jenkins.io/debian binary/ | sudo tee \
+	  /etc/apt/sources.list.d/jenkins.list > /dev/null
+	sudo apt-get update
+	sudo apt-get install jenkins

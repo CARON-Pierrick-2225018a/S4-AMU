@@ -1,22 +1,12 @@
 Donc on commence dans la partie UI par faire l'installation des plug-ins
 
-Ensuite On va stoper jenkins -> systemctl stop jenkins
-        Aller dans le fichier -> /usr/share/jenkins/
-        Modifie le nom du fichier jenkins.war en jenkins.war.old
-        wget le nouveau fichier et redémarrer jenkins
+Ensuite On va stoper jenkins -> service jenkins stop
+On va modifier dans le fichier config.xml donc d'abord on fait une copie du fichier au cas où :
+cd /var/lib/jenkins/
+cp config.xml config-old.xml
+nano config.xml
+changer cette ligne <useSecurity>true</useSecurity> en <useSecurity>false</useSecurity>
+supprimer tout le bloc des permission de <authorizationStrategy jusqu'a </securityRealm>
 
-Tout les versions que j'ai installer au fur et à mesure ->
-wget https://updates.jenkins.io/download/war/2.277.4/jenkins.war
-wget https://updates.jenkins.io/download/war/2.289.3/jenkins.war
-wget https://updates.jenkins.io/download/war/2.299/jenkins.war
-wget https://updates.jenkins.io/download/war/2.309/jenkins.war
-wget https://updates.jenkins.io/download/war/2.319.3/jenkins.war
-Passer sur la version java 11 déjà installer avec : update-alternative --config java
-wget https://updates.jenkins.io/download/war/2.329/jenkins.war
-wget https://updates.jenkins.io/download/war/2.359/jenkins.war
-wget https://updates.jenkins.io/download/war/2.361/jenkins.war
-wget https://updates.jenkins.io/download/war/2.362/jenkins.war
-
-
-wget https://updates.jenkins.io/download/war/latest/jenkins.war
-wget https://updates.jenkins.io/download/war/2.375.1/jenkins.war
+Et une fois qu'on a fait ça on lance la mise à jour
+        

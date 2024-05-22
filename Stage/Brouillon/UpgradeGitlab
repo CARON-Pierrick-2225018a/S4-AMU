@@ -27,6 +27,17 @@ Différentes étapes de l'upgrade (Il y en a 10) : apt-get install gitlab-ee=14.
                                                  apt-get install gitlab-ee=16.7.7-ee.0
                                                  apt-get install gitlab-ee=16.10.2-ee.0
                                                  apt-get install gitlab-ee=16.10.3-ee.0
-                                                 apt-get install gitlab-ee
+                                                 apt-get install gitlab-ee=16.11.1-ee.0
+                                                 Pour passer à la version 17 de gitlab il faut migrer vers un nouveau workflow d'enresgistrement :
+                                                 ### Pas sur qu'on est besoin de ces étapes
+                                                 gitlab-rails console
+                                                 Project.where(repository_storage: 'duplicate-path').update_all(repository_storage: 'default')
+                                                 ###
+                                                 nano /etc/gitlab/gitlab.rb
+                                                 On met en commentaire la ligne `sidekiq['max_concurrency']
+                                                 gitlab-ctl reconfigure
+                                                 gitleb-ctl restart 
+                                                 Et on lance l'installation
+
 
 Après chaque installation vérifier le status avec gitlab-ctl status

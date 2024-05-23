@@ -1,3 +1,20 @@
+#Disable https and switch http port to 8087
+
+nano /etc/systemd/system/jenkins.service.d/override.conf
+
+[Service]
+Environment="JAVA_OPTS=-Djava.awt.headless=true -Dhudson.model.DirectoryBrowserSupport.CSP=\"sandbox allow-scripts; default-src 'none'; img-src 'self' data: ; style-src 'self' 'unsafe-inline' data: ; script-src 'self' 'unsafe-inline' 'u>
+Environment="JENKINS_PORT=8087"
+Environment="JENKINS_PREFIX=/jenkins"
+
+##############################################
+
+nano /etc/default/jenkins (update following lines)
+
+HTTP_PORT=8087
+JENKINS_ARGS="--webroot=/var/cache/$NAME/war --httpPort=$HTTP_PORT --prefix=$PREFIX"
+
+###############################################
 Donc on commence dans la partie UI par faire l'installation des plug-ins
 
 Ensuite On va stoper jenkins -> service jenkins stop
@@ -16,3 +33,8 @@ echo "deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc]" \
   /etc/apt/sources.list.d/jenkins.list > /dev/null
 sudo apt-get update
 sudo apt-get install jenkins
+
+Ensuite on va remettre à jour les plugins
+
+
+Liste des commandes de la procédure :

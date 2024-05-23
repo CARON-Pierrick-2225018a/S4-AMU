@@ -1,4 +1,4 @@
-apt update && apt upgrade -y
+çapt update && apt upgrade -y
 nano /etc/initramfs-tools/initramfs.conf
 Change COMPRESS=gzip en COMPRESS=XY
 #Vérifier la liste des noyaux Linux installés :

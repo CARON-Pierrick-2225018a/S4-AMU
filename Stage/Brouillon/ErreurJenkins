@@ -1,121 +1,838 @@
-java.lang.NoSuchMethodError: 'void com.google.common.util.concurrent.Futures.addCallback(com.google.common.util.concurrent.ListenableFuture, com.google.common.util.concurrent.FutureCallback)'
-	at org.jenkinsci.plugins.workflow.flow.FlowExecutionList$ItemListenerImpl.onLoaded(FlowExecutionList.java:180)
-	at jenkins.model.Jenkins.<init>(Jenkins.java:1034)
-	at hudson.model.Hudson.<init>(Hudson.java:86)
-	at hudson.model.Hudson.<init>(Hudson.java:82)
-	at hudson.WebAppMain$3.run(WebAppMain.java:247)
-Caused: hudson.util.HudsonFailedToLoad
-	at hudson.WebAppMain$3.run(WebAppMain.java:261)
-
-	There are 4 choices for the alternative java (providing /usr/bin/java).
-
-  Selection    Path                                         Priority   Status
-------------------------------------------------------------
-  0            /usr/lib/jvm/java-11-openjdk-amd64/bin/java   1111      auto mode
-* 1            /usr/lib/jvm/java-11-openjdk-amd64/bin/java   1111      manual mode
-  2            /usr/lib/jvm/java-7-oracle/jre/bin/java       1074      manual mode
-  3            /usr/lib/jvm/java-8-oracle/jre/bin/java       1081      manual mode
-  4            /usr/lib/jvm/jdk-17.0.11/bin/java             1         manual mode
-
-
-  com.thoughtworks.xstream.mapper.CannotResolveClassException: hudson.security.GlobalMatrixAuthorizationStrategy
-  	at com.thoughtworks.xstream.mapper.DefaultMapper.realClass(DefaultMapper.java:81)
-  	at com.thoughtworks.xstream.mapper.MapperWrapper.realClass(MapperWrapper.java:125)
-  	at com.thoughtworks.xstream.mapper.DynamicProxyMapper.realClass(DynamicProxyMapper.java:55)
-  	at com.thoughtworks.xstream.mapper.MapperWrapper.realClass(MapperWrapper.java:125)
-  	at com.thoughtworks.xstream.mapper.PackageAliasingMapper.realClass(PackageAliasingMapper.java:88)
-  	at com.thoughtworks.xstream.mapper.MapperWrapper.realClass(MapperWrapper.java:125)
-  	at com.thoughtworks.xstream.mapper.ClassAliasingMapper.realClass(ClassAliasingMapper.java:79)
-  	at com.thoughtworks.xstream.mapper.MapperWrapper.realClass(MapperWrapper.java:125)
-  	at com.thoughtworks.xstream.mapper.ArrayMapper.realClass(ArrayMapper.java:74)
-  	at com.thoughtworks.xstream.mapper.MapperWrapper.realClass(MapperWrapper.java:125)
-  	at com.thoughtworks.xstream.mapper.SecurityMapper.realClass(SecurityMapper.java:71)
-  	at com.thoughtworks.xstream.mapper.MapperWrapper.realClass(MapperWrapper.java:125)
-  	at hudson.util.XStream2$CompatibilityMapper.realClass(XStream2.java:411)
-  	at hudson.util.xstream.MapperDelegate.realClass(MapperDelegate.java:46)
-  	at com.thoughtworks.xstream.mapper.MapperWrapper.realClass(MapperWrapper.java:125)
-  	at com.thoughtworks.xstream.mapper.CachingMapper.realClass(CachingMapper.java:47)
-  	at hudson.util.RobustReflectionConverter.determineType(RobustReflectionConverter.java:523)
-  	at hudson.util.RobustReflectionConverter.doUnmarshal(RobustReflectionConverter.java:348)
-  Caused: jenkins.util.xstream.CriticalXStreamException:
-  ---- Debugging information ----
-  cause-exception     : com.thoughtworks.xstream.mapper.CannotResolveClassException
-  cause-message       : hudson.security.GlobalMatrixAuthorizationStrategy
-  class               : hudson.model.Hudson
-  required-type       : hudson.model.Hudson
-  converter-type      : hudson.util.RobustReflectionConverter
-  path                : /hudson/authorizationStrategy
-  line number         : 13
-  version             : not available
-  -------------------------------
-  	at hudson.util.RobustReflectionConverter.doUnmarshal(RobustReflectionConverter.java:383)
-  	at hudson.util.RobustReflectionConverter.unmarshal(RobustReflectionConverter.java:291)
-  	at com.thoughtworks.xstream.core.TreeUnmarshaller.convert(TreeUnmarshaller.java:74)
-  	at com.thoughtworks.xstream.core.AbstractReferenceUnmarshaller.convert(AbstractReferenceUnmarshaller.java:72)
-  	at com.thoughtworks.xstream.core.TreeUnmarshaller.convertAnother(TreeUnmarshaller.java:68)
-  	at com.thoughtworks.xstream.core.TreeUnmarshaller.convertAnother(TreeUnmarshaller.java:52)
-  	at com.thoughtworks.xstream.core.TreeUnmarshaller.start(TreeUnmarshaller.java:136)
-  	at com.thoughtworks.xstream.core.AbstractTreeMarshallingStrategy.unmarshal(AbstractTreeMarshallingStrategy.java:32)
-  	at com.thoughtworks.xstream.XStream.unmarshal(XStream.java:1421)
-  	at hudson.util.XStream2.unmarshal(XStream2.java:189)
-  	at hudson.util.XStream2.unmarshal(XStream2.java:160)
-  	at com.thoughtworks.xstream.XStream.unmarshal(XStream.java:1399)
-  	at hudson.XmlFile.unmarshal(XmlFile.java:196)
-  Caused: java.io.IOException: Unable to read /var/lib/jenkins/config.xml
-  	at hudson.XmlFile.unmarshal(XmlFile.java:199)
-  	at hudson.XmlFile.unmarshal(XmlFile.java:179)
-  	at jenkins.model.Jenkins.loadConfig(Jenkins.java:3297)
-  	at jenkins.model.Jenkins$12.run(Jenkins.java:3399)
-  	at org.jvnet.hudson.reactor.TaskGraphBuilder$TaskImpl.run(TaskGraphBuilder.java:175)
-  	at org.jvnet.hudson.reactor.Reactor.runTask(Reactor.java:305)
-  	at jenkins.model.Jenkins$5.runTask(Jenkins.java:1159)
-  	at org.jvnet.hudson.reactor.Reactor$2.run(Reactor.java:222)
-  	at org.jvnet.hudson.reactor.Reactor$Node.run(Reactor.java:121)
-  	at jenkins.security.ImpersonatingExecutorService$1.run(ImpersonatingExecutorService.java:70)
-  	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
-  	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
-  	at java.base/java.lang.Thread.run(Thread.java:829)
-  Caused: org.jvnet.hudson.reactor.ReactorException
-  	at org.jvnet.hudson.reactor.Reactor.execute(Reactor.java:291)
-  	at jenkins.InitReactorRunner.run(InitReactorRunner.java:49)
-  	at jenkins.model.Jenkins.executeReactor(Jenkins.java:1194)
-  	at jenkins.model.Jenkins.<init>(Jenkins.java:984)
-  	at hudson.model.Hudson.<init>(Hudson.java:86)
-  	at hudson.model.Hudson.<init>(Hudson.java:82)
-  	at hudson.WebAppMain$3.run(WebAppMain.java:247)
-  Caused: hudson.util.HudsonFailedToLoad
-  	at hudson.WebAppMain$3.run(WebAppMain.java:264)
-
-
-	I managed to upgrade Jenkins to 2.458. However, I think we should start from scratch to make sure it works.
-	I started by upgrading plugins and Jenkins before updating config, but I had to change Apache config to use http instead of https. So, if we restore snapshot will need to switch back to https or disable https before it works again.
-
-	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-	#Disable https and switch http port to 8087
-
-	nano /etc/systemd/system/jenkins.service.d/override.conf
-
-	[Service]
-	Environment="JAVA_OPTS=-Djava.awt.headless=true -Dhudson.model.DirectoryBrowserSupport.CSP=\"sandbox allow-scripts; default-src 'none'; img-src 'self' data: ; style-src 'self' 'unsafe-inline' data: ; script-src 'self' 'unsafe-inline' 'u>
-	Environment="JENKINS_PORT=8087"
-	Environment="JENKINS_PREFIX=/jenkins"
-
-	##############################################
-
-	nano /etc/default/jenkins (update following lines)
-
-	HTTP_PORT=8087
-	JENKINS_ARGS="--webroot=/var/cache/$NAME/war --httpPort=$HTTP_PORT --prefix=$PREFIX"
-
-	###############################################
-
-	Upgrade plugins and restart
-	Upgrade Jenkins https://www.jenkins.io/doc/book/installing/linux/
-
-	sudo wget -O /usr/share/keyrings/jenkins-keyring.asc \
-	  https://pkg.jenkins.io/debian/jenkins.io-2023.key
-	echo "deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc]" \
-	  https://pkg.jenkins.io/debian binary/ | sudo tee \
-	  /etc/apt/sources.list.d/jenkins.list > /dev/null
-	sudo apt-get update
-	sudo apt-get install jenkins
+<?xml version='1.1' encoding='UTF-8'?>
+<hudson>
+  <disabledAdministrativeMonitors>
+    <string>OldData</string>
+    <string>jenkins.security.QueueItemAuthenticatorMonitor</string>
+    <string>jenkins.security.s2m.MasterKillSwitchWarning</string>
+    <string>hudson.diagnosis.ReverseProxySetupMonitor</string>
+  </disabledAdministrativeMonitors>
+  <version>2.263.1</version>
+  <installStateName>RESTART</installStateName>
+  <numExecutors>1</numExecutors>
+  <mode>EXCLUSIVE</mode>
+  <useSecurity>true</useSecurity>
+  <authorizationStrategy class="hudson.security.GlobalMatrixAuthorizationStrategy">
+    <permission>com.cloudbees.plugins.credentials.CredentialsProvider.Create:beierlm</permission>
+    <permission>com.cloudbees.plugins.credentials.CredentialsProvider.Create:benalaya</permission>
+    <permission>com.cloudbees.plugins.credentials.CredentialsProvider.Create:madavi</permission>
+    <permission>com.cloudbees.plugins.credentials.CredentialsProvider.Create:OSM_Admin</permission>
+    <permission>com.cloudbees.plugins.credentials.CredentialsProvider.Create:vicens</permission>
+    <permission>com.cloudbees.plugins.credentials.CredentialsProvider.Delete:beierlm</permission>
+    <permission>com.cloudbees.plugins.credentials.CredentialsProvider.Delete:benalaya</permission>
+    <permission>com.cloudbees.plugins.credentials.CredentialsProvider.Delete:madavi</permission>
+    <permission>com.cloudbees.plugins.credentials.CredentialsProvider.Delete:OSM_Admin</permission>
+    <permission>com.cloudbees.plugins.credentials.CredentialsProvider.Delete:vicens</permission>
+    <permission>com.cloudbees.plugins.credentials.CredentialsProvider.ManageDomains:beierlm</permission>
+    <permission>com.cloudbees.plugins.credentials.CredentialsProvider.ManageDomains:benalaya</permission>
+    <permission>com.cloudbees.plugins.credentials.CredentialsProvider.ManageDomains:madavi</permission>
+    <permission>com.cloudbees.plugins.credentials.CredentialsProvider.ManageDomains:OSM_Admin</permission>
+    <permission>com.cloudbees.plugins.credentials.CredentialsProvider.ManageDomains:vicens</permission>
+    <permission>com.cloudbees.plugins.credentials.CredentialsProvider.Update:beierlm</permission>
+    <permission>com.cloudbees.plugins.credentials.CredentialsProvider.Update:benalaya</permission>
+    <permission>com.cloudbees.plugins.credentials.CredentialsProvider.Update:madavi</permission>
+    <permission>com.cloudbees.plugins.credentials.CredentialsProvider.Update:OSM_Admin</permission>
+    <permission>com.cloudbees.plugins.credentials.CredentialsProvider.Update:vicens</permission>
+    <permission>com.cloudbees.plugins.credentials.CredentialsProvider.View:beierlm</permission>
+    <permission>com.cloudbees.plugins.credentials.CredentialsProvider.View:benalaya</permission>
+    <permission>com.cloudbees.plugins.credentials.CredentialsProvider.View:madavi</permission>
+    <permission>com.cloudbees.plugins.credentials.CredentialsProvider.View:OSM_Admin</permission>
+    <permission>com.cloudbees.plugins.credentials.CredentialsProvider.View:vicens</permission>
+    <permission>com.sonyericsson.hudson.plugins.gerrit.trigger.PluginImpl.ManualTrigger:beierlm</permission>
+    <permission>com.sonyericsson.hudson.plugins.gerrit.trigger.PluginImpl.ManualTrigger:benalaya</permission>
+    <permission>com.sonyericsson.hudson.plugins.gerrit.trigger.PluginImpl.ManualTrigger:madavi</permission>
+    <permission>com.sonyericsson.hudson.plugins.gerrit.trigger.PluginImpl.ManualTrigger:OSM_Admin</permission>
+    <permission>com.sonyericsson.hudson.plugins.gerrit.trigger.PluginImpl.ManualTrigger:vicens</permission>
+    <permission>com.sonyericsson.hudson.plugins.gerrit.trigger.PluginImpl.ManualTrigger:yadavmr</permission>
+    <permission>com.sonyericsson.hudson.plugins.gerrit.trigger.PluginImpl.Retrigger:beierlm</permission>
+    <permission>com.sonyericsson.hudson.plugins.gerrit.trigger.PluginImpl.Retrigger:benalaya</permission>
+    <permission>com.sonyericsson.hudson.plugins.gerrit.trigger.PluginImpl.Retrigger:madavi</permission>
+    <permission>com.sonyericsson.hudson.plugins.gerrit.trigger.PluginImpl.Retrigger:OSM_Admin</permission>
+    <permission>com.sonyericsson.hudson.plugins.gerrit.trigger.PluginImpl.Retrigger:vicens</permission>
+    <permission>hudson.model.Computer.Build:beierlm</permission>
+    <permission>hudson.model.Computer.Build:benalaya</permission>
+    <permission>hudson.model.Computer.Build:madavi</permission>
+    <permission>hudson.model.Computer.Build:OSM_Admin</permission>
+    <permission>hudson.model.Computer.Build:vicens</permission>
+    <permission>hudson.model.Computer.Configure:beierlm</permission>
+    <permission>hudson.model.Computer.Configure:benalaya</permission>
+    <permission>hudson.model.Computer.Configure:madavi</permission>
+    <permission>hudson.model.Computer.Configure:OSM_Admin</permission>
+    <permission>hudson.model.Computer.Configure:vicens</permission>
+    <permission>hudson.model.Computer.Connect:beierlm</permission>
+    <permission>hudson.model.Computer.Connect:benalaya</permission>
+    <permission>hudson.model.Computer.Connect:madavi</permission>
+    <permission>hudson.model.Computer.Connect:OSM_Admin</permission>
+    <permission>hudson.model.Computer.Connect:vicens</permission>
+    <permission>hudson.model.Computer.Create:beierlm</permission>
+    <permission>hudson.model.Computer.Create:benalaya</permission>
+    <permission>hudson.model.Computer.Create:madavi</permission>
+    <permission>hudson.model.Computer.Create:OSM_Admin</permission>
+    <permission>hudson.model.Computer.Create:vicens</permission>
+    <permission>hudson.model.Computer.Delete:beierlm</permission>
+    <permission>hudson.model.Computer.Delete:benalaya</permission>
+    <permission>hudson.model.Computer.Delete:madavi</permission>
+    <permission>hudson.model.Computer.Delete:OSM_Admin</permission>
+    <permission>hudson.model.Computer.Delete:vicens</permission>
+    <permission>hudson.model.Computer.Disconnect:beierlm</permission>
+    <permission>hudson.model.Computer.Disconnect:benalaya</permission>
+    <permission>hudson.model.Computer.Disconnect:madavi</permission>
+    <permission>hudson.model.Computer.Disconnect:OSM_Admin</permission>
+    <permission>hudson.model.Computer.Disconnect:vicens</permission>
+    <permission>hudson.model.Hudson.Administer:beierlm</permission>
+    <permission>hudson.model.Hudson.Administer:benalaya</permission>
+    <permission>hudson.model.Hudson.Administer:madavi</permission>
+    <permission>hudson.model.Hudson.Administer:OSM_Admin</permission>
+    <permission>hudson.model.Hudson.Administer:OSM_Leader</permission>
+    <permission>hudson.model.Hudson.Administer:OSM_TSC</permission>
+    <permission>hudson.model.Hudson.Administer:vicens</permission>
+    <permission>hudson.model.Hudson.Read:anonymous</permission>
+    <permission>hudson.model.Hudson.Read:beierlm</permission>
+    <permission>hudson.model.Hudson.Read:benalaya</permission>
+    <permission>hudson.model.Hudson.Read:madavi</permission>
+    <permission>hudson.model.Hudson.Read:OSM_Admin</permission>
+    <permission>hudson.model.Hudson.Read:OSM_Committer</permission>
+    <permission>hudson.model.Hudson.Read:OSM_Contributor</permission>
+    <permission>hudson.model.Hudson.Read:OSM_Leader</permission>
+    <permission>hudson.model.Hudson.Read:OSM_TSC</permission>
+    <permission>hudson.model.Hudson.Read:vicens</permission>
+    <permission>hudson.model.Item.Build:beierlm</permission>
+    <permission>hudson.model.Item.Build:benalaya</permission>
+    <permission>hudson.model.Item.Build:madavi</permission>
+    <permission>hudson.model.Item.Build:OSM_Admin</permission>
+    <permission>hudson.model.Item.Build:OSM_Committer</permission>
+    <permission>hudson.model.Item.Build:OSM_Leader</permission>
+    <permission>hudson.model.Item.Build:OSM_TSC</permission>
+    <permission>hudson.model.Item.Build:vicens</permission>
+    <permission>hudson.model.Item.Build:yadavmr</permission>
+    <permission>hudson.model.Item.Cancel:beierlm</permission>
+    <permission>hudson.model.Item.Cancel:benalaya</permission>
+    <permission>hudson.model.Item.Cancel:madavi</permission>
+    <permission>hudson.model.Item.Cancel:OSM_Admin</permission>
+    <permission>hudson.model.Item.Cancel:OSM_Committer</permission>
+    <permission>hudson.model.Item.Cancel:OSM_Leader</permission>
+    <permission>hudson.model.Item.Cancel:OSM_TSC</permission>
+    <permission>hudson.model.Item.Cancel:vicens</permission>
+    <permission>hudson.model.Item.Cancel:yadavmr</permission>
+    <permission>hudson.model.Item.Configure:beierlm</permission>
+    <permission>hudson.model.Item.Configure:benalaya</permission>
+    <permission>hudson.model.Item.Configure:madavi</permission>
+    <permission>hudson.model.Item.Configure:OSM_Admin</permission>
+    <permission>hudson.model.Item.Configure:OSM_Committer</permission>
+    <permission>hudson.model.Item.Configure:OSM_Leader</permission>
+    <permission>hudson.model.Item.Configure:OSM_TSC</permission>
+    <permission>hudson.model.Item.Configure:vicens</permission>
+    <permission>hudson.model.Item.Configure:yadavmr</permission>
+    <permission>hudson.model.Item.Create:beierlm</permission>
+    <permission>hudson.model.Item.Create:benalaya</permission>
+    <permission>hudson.model.Item.Create:madavi</permission>
+    <permission>hudson.model.Item.Create:OSM_Admin</permission>
+    <permission>hudson.model.Item.Create:OSM_Committer</permission>
+    <permission>hudson.model.Item.Create:OSM_Leader</permission>
+    <permission>hudson.model.Item.Create:OSM_TSC</permission>
+    <permission>hudson.model.Item.Create:vicens</permission>
+    <permission>hudson.model.Item.Create:yadavmr</permission>
+    <permission>hudson.model.Item.Delete:beierlm</permission>
+    <permission>hudson.model.Item.Delete:benalaya</permission>
+    <permission>hudson.model.Item.Delete:madavi</permission>
+    <permission>hudson.model.Item.Delete:OSM_Admin</permission>
+    <permission>hudson.model.Item.Delete:OSM_Committer</permission>
+    <permission>hudson.model.Item.Delete:OSM_Leader</permission>
+    <permission>hudson.model.Item.Delete:OSM_TSC</permission>
+    <permission>hudson.model.Item.Delete:vicens</permission>
+    <permission>hudson.model.Item.Delete:yadavmr</permission>
+    <permission>hudson.model.Item.Discover:anonymous</permission>
+    <permission>hudson.model.Item.Discover:beierlm</permission>
+    <permission>hudson.model.Item.Discover:benalaya</permission>
+    <permission>hudson.model.Item.Discover:madavi</permission>
+    <permission>hudson.model.Item.Discover:OSM_Admin</permission>
+    <permission>hudson.model.Item.Discover:OSM_Committer</permission>
+    <permission>hudson.model.Item.Discover:OSM_Contributor</permission>
+    <permission>hudson.model.Item.Discover:OSM_Leader</permission>
+    <permission>hudson.model.Item.Discover:OSM_TSC</permission>
+    <permission>hudson.model.Item.Discover:vicens</permission>
+    <permission>hudson.model.Item.Discover:yadavmr</permission>
+    <permission>hudson.model.Item.Read:anonymous</permission>
+    <permission>hudson.model.Item.Read:beierlm</permission>
+    <permission>hudson.model.Item.Read:benalaya</permission>
+    <permission>hudson.model.Item.Read:madavi</permission>
+    <permission>hudson.model.Item.Read:OSM_Admin</permission>
+    <permission>hudson.model.Item.Read:OSM_Committer</permission>
+    <permission>hudson.model.Item.Read:OSM_Contributor</permission>
+    <permission>hudson.model.Item.Read:OSM_Leader</permission>
+    <permission>hudson.model.Item.Read:OSM_TSC</permission>
+    <permission>hudson.model.Item.Read:vicens</permission>
+    <permission>hudson.model.Item.Read:yadavmr</permission>
+    <permission>hudson.model.Item.ViewStatus:beierlm</permission>
+    <permission>hudson.model.Item.ViewStatus:benalaya</permission>
+    <permission>hudson.model.Item.ViewStatus:madavi</permission>
+    <permission>hudson.model.Item.ViewStatus:OSM_Admin</permission>
+    <permission>hudson.model.Item.ViewStatus:OSM_Committer</permission>
+    <permission>hudson.model.Item.ViewStatus:OSM_Contributor</permission>
+    <permission>hudson.model.Item.ViewStatus:OSM_Leader</permission>
+    <permission>hudson.model.Item.ViewStatus:OSM_TSC</permission>
+    <permission>hudson.model.Item.ViewStatus:vicens</permission>
+    <permission>hudson.model.Item.ViewStatus:yadavmr</permission>
+    <permission>hudson.model.Item.Workspace:anonymous</permission>
+    <permission>hudson.model.Item.Workspace:beierlm</permission>
+    <permission>hudson.model.Item.Workspace:benalaya</permission>
+    <permission>hudson.model.Item.Workspace:madavi</permission>
+    <permission>hudson.model.Item.Workspace:OSM_Admin</permission>
+    <permission>hudson.model.Item.Workspace:OSM_Committer</permission>
+    <permission>hudson.model.Item.Workspace:OSM_Contributor</permission>
+    <permission>hudson.model.Item.Workspace:OSM_Leader</permission>
+    <permission>hudson.model.Item.Workspace:OSM_TSC</permission>
+    <permission>hudson.model.Item.Workspace:vicens</permission>
+    <permission>hudson.model.Item.Workspace:yadavmr</permission>
+    <permission>hudson.model.Run.Delete:beierlm</permission>
+    <permission>hudson.model.Run.Delete:benalaya</permission>
+    <permission>hudson.model.Run.Delete:madavi</permission>
+    <permission>hudson.model.Run.Delete:OSM_Admin</permission>
+    <permission>hudson.model.Run.Delete:OSM_Committer</permission>
+    <permission>hudson.model.Run.Delete:OSM_Leader</permission>
+    <permission>hudson.model.Run.Delete:OSM_TSC</permission>
+    <permission>hudson.model.Run.Delete:vicens</permission>
+    <permission>hudson.model.Run.Delete:yadavmr</permission>
+    <permission>hudson.model.Run.Update:beierlm</permission>
+    <permission>hudson.model.Run.Update:benalaya</permission>
+    <permission>hudson.model.Run.Update:madavi</permission>
+    <permission>hudson.model.Run.Update:OSM_Admin</permission>
+    <permission>hudson.model.Run.Update:OSM_Committer</permission>
+    <permission>hudson.model.Run.Update:OSM_Leader</permission>
+    <permission>hudson.model.Run.Update:OSM_TSC</permission>
+    <permission>hudson.model.Run.Update:vicens</permission>
+    <permission>hudson.model.Run.Update:yadavmr</permission>
+    <permission>hudson.model.View.Configure:beierlm</permission>
+    <permission>hudson.model.View.Configure:benalaya</permission>
+    <permission>hudson.model.View.Configure:madavi</permission>
+    <permission>hudson.model.View.Configure:OSM_Admin</permission>
+    <permission>hudson.model.View.Configure:OSM_Committer</permission>
+    <permission>hudson.model.View.Configure:OSM_Leader</permission>
+    <permission>hudson.model.View.Configure:OSM_TSC</permission>
+    <permission>hudson.model.View.Configure:vicens</permission>
+    <permission>hudson.model.View.Configure:yadavmr</permission>
+    <permission>hudson.model.View.Create:beierlm</permission>
+    <permission>hudson.model.View.Create:benalaya</permission>
+    <permission>hudson.model.View.Create:madavi</permission>
+    <permission>hudson.model.View.Create:OSM_Admin</permission>
+    <permission>hudson.model.View.Create:OSM_Committer</permission>
+    <permission>hudson.model.View.Create:OSM_Leader</permission>
+    <permission>hudson.model.View.Create:OSM_TSC</permission>
+    <permission>hudson.model.View.Create:vicens</permission>
+    <permission>hudson.model.View.Create:yadavmr</permission>
+    <permission>hudson.model.View.Delete:beierlm</permission>
+    <permission>hudson.model.View.Delete:benalaya</permission>
+    <permission>hudson.model.View.Delete:madavi</permission>
+    <permission>hudson.model.View.Delete:OSM_Admin</permission>
+    <permission>hudson.model.View.Delete:OSM_Committer</permission>
+    <permission>hudson.model.View.Delete:OSM_Leader</permission>
+    <permission>hudson.model.View.Delete:OSM_TSC</permission>
+    <permission>hudson.model.View.Delete:vicens</permission>
+    <permission>hudson.model.View.Delete:yadavmr</permission>
+    <permission>hudson.model.View.Read:anonymous</permission>
+    <permission>hudson.model.View.Read:beierlm</permission>
+    <permission>hudson.model.View.Read:benalaya</permission>
+    <permission>hudson.model.View.Read:madavi</permission>
+    <permission>hudson.model.View.Read:OSM_Admin</permission>
+    <permission>hudson.model.View.Read:OSM_Committer</permission>
+    <permission>hudson.model.View.Read:OSM_Contributor</permission>
+    <permission>hudson.model.View.Read:OSM_Leader</permission>
+    <permission>hudson.model.View.Read:OSM_TSC</permission>
+    <permission>hudson.model.View.Read:vicens</permission>
+    <permission>hudson.model.View.Read:yadavmr</permission>
+    <permission>hudson.scm.SCM.Tag:beierlm</permission>
+    <permission>hudson.scm.SCM.Tag:benalaya</permission>
+    <permission>hudson.scm.SCM.Tag:madavi</permission>
+    <permission>hudson.scm.SCM.Tag:OSM_Admin</permission>
+    <permission>hudson.scm.SCM.Tag:OSM_Committer</permission>
+    <permission>hudson.scm.SCM.Tag:OSM_Leader</permission>
+    <permission>hudson.scm.SCM.Tag:OSM_TSC</permission>
+    <permission>hudson.scm.SCM.Tag:vicens</permission>
+  </authorizationStrategy>
+  <securityRealm class="hudson.security.LDAPSecurityRealm" plugin="ldap@1.22">
+    <disableMailAddressResolver>false</disableMailAddressResolver>
+    <configurations>
+      <jenkins.security.plugins.ldap.LDAPConfiguration>
+        <server>ldaps://exteoldc.etsi.org</server>
+        <rootDN>dc=etsi,dc=org</rootDN>
+        <inhibitInferRootDN>false</inhibitInferRootDN>
+        <userSearchBase>cn=users</userSearchBase>
+        <userSearch>samaccountname={0}</userSearch>
+        <groupSearchFilter>ou=oss</groupSearchFilter>
+        <groupMembershipStrategy class="jenkins.security.plugins.ldap.FromUserRecordLDAPGroupMembershipStrategy">
+          <attributeName>memberOf</attributeName>
+        </groupMembershipStrategy>
+        <managerDN>ldaposs@etsi.org</managerDN>
+        <managerPasswordSecret>{AQAAABAAAAAQKlhKjk2kGT2eBf24to0oH3PTDSo6k43WeQ0dA2wxpP4=}</managerPasswordSecret>
+        <displayNameAttributeName>samaccountname</displayNameAttributeName>
+        <mailAddressAttributeName>mail</mailAddressAttributeName>
+        <ignoreIfUnavailable>false</ignoreIfUnavailable>
+      </jenkins.security.plugins.ldap.LDAPConfiguration>
+      <jenkins.security.plugins.ldap.LDAPConfiguration>
+        <server>ldaps://exteoldc.etsi.org</server>
+        <rootDN>dc=etsi,dc=org</rootDN>
+        <inhibitInferRootDN>false</inhibitInferRootDN>
+        <userSearchBase>ou=oss</userSearchBase>
+        <userSearch>samaccountname={0}</userSearch>
+        <groupSearchFilter>ou=oss</groupSearchFilter>
+        <groupMembershipStrategy class="jenkins.security.plugins.ldap.FromUserRecordLDAPGroupMembershipStrategy">
+          <attributeName>memberOf</attributeName>
+        </groupMembershipStrategy>
+        <managerDN>ldaposs@etsi.org</managerDN>
+        <managerPasswordSecret>{AQAAABAAAAAQ66OJ9dTzQkDvUwcaCNC/6A78qWNFTpz5GWZKfHNj4bM=}</managerPasswordSecret>
+        <displayNameAttributeName>samaccountname</displayNameAttributeName>
+        <mailAddressAttributeName>mail</mailAddressAttributeName>
+        <ignoreIfUnavailable>false</ignoreIfUnavailable>
+      </jenkins.security.plugins.ldap.LDAPConfiguration>
+    </configurations>
+    <userIdStrategy class="jenkins.model.IdStrategy$CaseInsensitive"/>
+    <groupIdStrategy class="jenkins.model.IdStrategy$CaseInsensitive"/>
+    <disableRolePrefixing>true</disableRolePrefixing>
+  </securityRealm>
+  <disableRememberMe>true</disableRememberMe>
+  <projectNamingStrategy class="jenkins.model.ProjectNamingStrategy$DefaultProjectNamingStrategy"/>
+  <workspaceDir>${ITEM_ROOTDIR}/workspace</workspaceDir>
+  <buildsDir>${ITEM_ROOTDIR}/builds</buildsDir>
+  <markupFormatter class="hudson.markup.EscapedMarkupFormatter"/>
+  <jdks/>
+  <viewsTabBar class="hudson.views.DefaultViewsTabBar"/>
+  <myViewsTabBar class="hudson.views.DefaultMyViewsTabBar"/>
+  <clouds/>
+  <quietPeriod>5</quietPeriod>
+  <scmCheckoutRetryCount>0</scmCheckoutRetryCount>
+  <views>
+    <hudson.model.AllView>
+      <owner class="hudson" reference="../../.."/>
+      <name>all</name>
+      <filterExecutors>false</filterExecutors>
+      <filterQueue>false</filterQueue>
+      <properties class="hudson.model.View$PropertyList"/>
+    </hudson.model.AllView>
+    <hudson.plugins.view.dashboard.Dashboard plugin="dashboard-view@2.9.11">
+      <owner class="hudson" reference="../../.."/>
+      <name>stage_3 merge</name>
+      <filterExecutors>false</filterExecutors>
+      <filterQueue>false</filterQueue>
+      <properties class="hudson.model.View$PropertyList"/>
+      <jobNames>
+        <comparator class="hudson.util.CaseInsensitiveComparator"/>
+        <string>osm-stage_3-merge/master</string>
+        <string>osm-stage_3-merge/v10.0</string>
+        <string>osm-stage_3-merge/v12.0</string>
+        <string>osm-stage_3-merge/v13.0</string>
+        <string>osm-stage_3-merge/v14.0</string>
+        <string>osm-stage_3-merge/v15.0</string>
+      </jobNames>
+      <jobFilters/>
+      <columns>
+        <hudson.views.StatusColumn/>
+        <hudson.views.WeatherColumn/>
+        <hudson.views.JobColumn/>
+        <hudson.views.LastSuccessColumn/>
+        <hudson.views.LastFailureColumn/>
+        <hudson.views.LastDurationColumn/>
+        <hudson.views.BuildButtonColumn/>
+      </columns>
+      <recurse>true</recurse>
+      <useCssStyle>false</useCssStyle>
+      <includeStdJobList>true</includeStdJobList>
+      <hideJenkinsPanels>false</hideJenkinsPanels>
+      <leftPortletWidth>50%</leftPortletWidth>
+      <rightPortletWidth>50%</rightPortletWidth>
+      <leftPortlets/>
+      <rightPortlets/>
+      <topPortlets>
+        <hudson.plugins.view.dashboard.test.TestStatisticsPortlet>
+          <id>dashboard_portlet_17617</id>
+          <name>Test Statistics Grid</name>
+          <useBackgroundColors>false</useBackgroundColors>
+          <skippedColor>FDB813</skippedColor>
+          <successColor>71E66D</successColor>
+          <failureColor>E86850</failureColor>
+          <hideZeroTestProjects>false</hideZeroTestProjects>
+        </hudson.plugins.view.dashboard.test.TestStatisticsPortlet>
+        <hudson.plugins.view.dashboard.stats.StatBuilds>
+          <id>dashboard_portlet_20374</id>
+          <name>Build statistics</name>
+        </hudson.plugins.view.dashboard.stats.StatBuilds>
+      </topPortlets>
+      <bottomPortlets/>
+    </hudson.plugins.view.dashboard.Dashboard>
+    <listView>
+      <owner class="hudson" reference="../../.."/>
+      <name>Publish</name>
+      <filterExecutors>false</filterExecutors>
+      <filterQueue>false</filterQueue>
+      <properties class="hudson.model.View$PropertyList"/>
+      <jobNames>
+        <comparator class="hudson.util.CaseInsensitiveComparator" reference="../../../hudson.plugins.view.dashboard.Dashboard/jobNames/comparator"/>
+        <string>daily-stage_4-releasefifteen</string>
+        <string>daily-stage_4-releasefourteen</string>
+        <string>daily-stage_4-releaseten</string>
+        <string>daily-stage_4-releasethirteen</string>
+        <string>daily-stage_4-releasetwelve</string>
+        <string>daily-stage_4-testing</string>
+        <string>osm-repo-releasefifteen-daily</string>
+        <string>osm-repo-releasefourteen-daily</string>
+        <string>osm-repo-releaseten-daily</string>
+        <string>osm-repo-releasethirteen-daily</string>
+        <string>osm-repo-releasetwelve-daily</string>
+        <string>osm-repo-testing-daily</string>
+        <string>publish-docker-api-fe</string>
+        <string>publish-releasecandidate</string>
+        <string>publish-releasefifteen-stable</string>
+        <string>publish-releasefourteen-stable</string>
+        <string>publish-releaseten-stable</string>
+        <string>publish-releasethirteen-stable</string>
+        <string>publish-releasetwelve-stable</string>
+      </jobNames>
+      <jobFilters/>
+      <columns>
+        <hudson.views.StatusColumn/>
+        <hudson.views.WeatherColumn/>
+        <hudson.views.JobColumn/>
+        <hudson.views.LastSuccessColumn/>
+        <hudson.views.LastFailureColumn/>
+        <hudson.views.LastDurationColumn/>
+        <hudson.views.BuildButtonColumn/>
+        <org.jenkins.plugins.builton.BuiltOnColumn plugin="built-on-column@1.1"/>
+      </columns>
+      <recurse>false</recurse>
+    </listView>
+    <listView>
+      <owner class="hudson" reference="../../.."/>
+      <name>master</name>
+      <filterExecutors>false</filterExecutors>
+      <filterQueue>false</filterQueue>
+      <properties class="hudson.model.View$PropertyList"/>
+      <jobNames>
+        <comparator class="hudson.util.CaseInsensitiveComparator" reference="../../../hudson.plugins.view.dashboard.Dashboard/jobNames/comparator"/>
+      </jobNames>
+      <jobFilters>
+        <hudson.views.StatusFilter>
+          <statusFilter>true</statusFilter>
+        </hudson.views.StatusFilter>
+      </jobFilters>
+      <columns>
+        <hudson.views.StatusColumn/>
+        <hudson.views.JobColumn/>
+        <hudson.views.LastSuccessColumn/>
+        <hudson.views.LastFailureColumn/>
+        <hudson.views.LastDurationColumn/>
+        <hudson.views.BuildButtonColumn/>
+        <org.jenkins.plugins.builton.BuiltOnColumn plugin="built-on-column@1.1"/>
+        <hudson.plugins.cobertura.CoverageColumn plugin="cobertura@1.14">
+          <type>line</type>
+        </hudson.plugins.cobertura.CoverageColumn>
+      </columns>
+      <includeRegex>.*-stage.*/master</includeRegex>
+      <recurse>true</recurse>
+    </listView>
+    <hudson.plugins.view.dashboard.Dashboard plugin="dashboard-view@2.9.11">
+      <owner class="hudson" reference="../../.."/>
+      <name>Robot tests</name>
+      <description>This is the dashboard for the test execution. Note that the graphs and the results are from the last Successful execution. If the stage_3_merge fails, the report is not updated in this view.</description>
+      <filterExecutors>false</filterExecutors>
+      <filterQueue>false</filterQueue>
+      <properties class="hudson.model.View$PropertyList"/>
+      <jobNames>
+        <comparator class="hudson.util.CaseInsensitiveComparator" reference="../../../hudson.plugins.view.dashboard.Dashboard/jobNames/comparator"/>
+        <string>azure_robot_tests</string>
+        <string>daily-stage_4-releasefifteen</string>
+        <string>daily-stage_4-releasefourteen</string>
+        <string>daily-stage_4-releasetwelve</string>
+        <string>daily-stage_4-testing</string>
+        <string>osm-stage_3-merge/master</string>
+        <string>osm-stage_3-merge/v12.0</string>
+        <string>osm-stage_3-merge/v14.0</string>
+        <string>osm-stage_3-merge/v15.0</string>
+      </jobNames>
+      <jobFilters/>
+      <columns>
+        <hudson.views.StatusColumn/>
+        <hudson.plugins.robot.view.RobotListViewColumn plugin="robot@2.0.0"/>
+        <hudson.views.WeatherColumn/>
+        <hudson.views.JobColumn/>
+        <hudson.views.LastSuccessColumn/>
+        <hudson.views.LastFailureColumn/>
+        <hudson.views.LastDurationColumn/>
+        <org.jenkins.plugins.builton.BuiltOnColumn plugin="built-on-column@1.1"/>
+      </columns>
+      <recurse>true</recurse>
+      <useCssStyle>false</useCssStyle>
+      <includeStdJobList>false</includeStdJobList>
+      <hideJenkinsPanels>false</hideJenkinsPanels>
+      <leftPortletWidth>50%</leftPortletWidth>
+      <rightPortletWidth>50%</rightPortletWidth>
+      <leftPortlets>
+        <hudson.plugins.view.dashboard.core.ImagePortlet>
+          <id>dashboard_portlet_6600</id>
+          <name>Daily (master) graph</name>
+          <url>https://osm.etsi.org/jenkins/view/Robot%20tests/job/osm-stage_3-merge/job/master/lastSuccessfulBuild/robot/graph?zoomSignificant=true&amp;failedOnly=false&amp;criticalOnly=false&amp;maxBuildsToShow=0</url>
+        </hudson.plugins.view.dashboard.core.ImagePortlet>
+        <hudson.plugins.view.dashboard.core.ImagePortlet>
+          <id>dashboard_portlet_11668</id>
+          <name>Daily (v15.0) graph</name>
+          <url>https://osm.etsi.org/jenkins/view/Robot%20tests/job/osm-stage_3-merge/job/v15.0/lastSuccessfulBuild/robot/graph?zoomSignificant=true&amp;failedOnly=false&amp;criticalOnly=false&amp;maxBuildsToShow=0</url>
+        </hudson.plugins.view.dashboard.core.ImagePortlet>
+        <hudson.plugins.view.dashboard.core.ImagePortlet>
+          <id>dashboard_portlet_148</id>
+          <name>Daily (v14.0) graph</name>
+          <url>https://osm.etsi.org/jenkins/view/Robot%20tests/job/osm-stage_3-merge/job/v14.0/lastSuccessfulBuild/robot/graph?zoomSignificant=true&amp;failedOnly=false&amp;criticalOnly=false&amp;maxBuildsToShow=0</url>
+        </hudson.plugins.view.dashboard.core.ImagePortlet>
+      </leftPortlets>
+      <rightPortlets>
+        <hudson.plugins.view.dashboard.core.ImagePortlet>
+          <id>dashboard_portlet_24175</id>
+          <name>Daily (v12.0) graph</name>
+          <url>https://osm.etsi.org/jenkins/view/Robot%20tests/job/osm-stage_3-merge/job/v12.0/lastSuccessfulBuild/robot/graph?zoomSignificant=true&amp;failedOnly=false&amp;criticalOnly=false&amp;maxBuildsToShow=0</url>
+        </hudson.plugins.view.dashboard.core.ImagePortlet>
+        <hudson.plugins.view.dashboard.core.ImagePortlet>
+          <id>dashboard_portlet_21545</id>
+          <name>Azure (master)</name>
+          <url>https://osm.etsi.org/jenkins/view/Robot%20tests/job/azure_robot_tests/lastSuccessfulBuild/robot/graph?zoomSignificant=true&amp;failedOnly=false&amp;criticalOnly=false&amp;maxBuildsToShow=0</url>
+        </hudson.plugins.view.dashboard.core.ImagePortlet>
+      </rightPortlets>
+      <topPortlets>
+        <hudson.plugins.view.dashboard.builds.LatestBuilds>
+          <id>dashboard_portlet_21713</id>
+          <name>Latest builds</name>
+          <numBuilds>15</numBuilds>
+        </hudson.plugins.view.dashboard.builds.LatestBuilds>
+      </topPortlets>
+      <bottomPortlets>
+        <hudson.plugins.view.dashboard.core.IframePortlet>
+          <id>dashboard_portlet_609</id>
+          <name>Daily (master) report</name>
+          <iframeSource>https://osm.etsi.org/jenkins/view/Robot%20tests/job/osm-stage_3-merge/job/master/lastSuccessfulBuild/robot/report/log.html</iframeSource>
+          <effectiveUrl>https://osm.etsi.org/jenkins/view/Robot%20tests/job/osm-stage_3-merge/job/master/lastSuccessfulBuild/robot/report/log.html</effectiveUrl>
+          <divStyle>width:100%;height:1000px;</divStyle>
+        </hudson.plugins.view.dashboard.core.IframePortlet>
+        <hudson.plugins.view.dashboard.core.IframePortlet>
+          <id>dashboard_portlet_18431</id>
+          <name>Daily (v14.0) report</name>
+          <iframeSource>https://osm.etsi.org/jenkins/view/Robot%20tests/job/osm-stage_3-merge/job/v14.0/lastSuccessfulBuild/robot/report/log.html</iframeSource>
+          <effectiveUrl>https://osm.etsi.org/jenkins/view/Robot%20tests/job/osm-stage_3-merge/job/v14.0/lastSuccessfulBuild/robot/report/log.html</effectiveUrl>
+          <divStyle>width:100%;height:1000px;</divStyle>
+        </hudson.plugins.view.dashboard.core.IframePortlet>
+        <hudson.plugins.view.dashboard.core.IframePortlet>
+          <id>dashboard_portlet_1871</id>
+          <name>Daily (v12.0) report</name>
+          <iframeSource>https://osm.etsi.org/jenkins/view/Robot%20tests/job/osm-stage_3-merge/job/v12.0/lastSuccessfulBuild/robot/report/log.html</iframeSource>
+          <effectiveUrl>https://osm.etsi.org/jenkins/view/Robot%20tests/job/osm-stage_3-merge/job/v12.0/lastSuccessfulBuild/robot/report/log.html</effectiveUrl>
+          <divStyle>width:100%;height:1000px;</divStyle>
+        </hudson.plugins.view.dashboard.core.IframePortlet>
+        <hudson.plugins.view.dashboard.core.IframePortlet>
+          <id>dashboard_portlet_13600</id>
+          <name>Daily (v15.0) report</name>
+          <iframeSource>https://osm.etsi.org/jenkins/view/Robot%20tests/job/osm-stage_3-merge/job/v15.0/lastSuccessfulBuild/robot/report/log.html</iframeSource>
+          <effectiveUrl>https://osm.etsi.org/jenkins/view/Robot%20tests/job/osm-stage_3-merge/job/v15.0/lastSuccessfulBuild/robot/report/log.html</effectiveUrl>
+          <divStyle>width:100%;height:1000px;</divStyle>
+        </hudson.plugins.view.dashboard.core.IframePortlet>
+        <hudson.plugins.view.dashboard.core.IframePortlet>
+          <id>dashboard_portlet_26649</id>
+          <name>Azure (master) report</name>
+          <iframeSource>https://osm.etsi.org/jenkins/view/Robot%20tests/job/azure_robot_tests/lastSuccessfulBuild/robot/report/log.html</iframeSource>
+          <effectiveUrl>https://osm.etsi.org/jenkins/view/Robot%20tests/job/azure_robot_tests/lastSuccessfulBuild/robot/report/log.html</effectiveUrl>
+          <divStyle>width:100%;height:1000px;</divStyle>
+        </hudson.plugins.view.dashboard.core.IframePortlet>
+      </bottomPortlets>
+    </hudson.plugins.view.dashboard.Dashboard>
+    <hudson.plugins.view.dashboard.Dashboard plugin="dashboard-view@2.9.11">
+      <owner class="hudson" reference="../../.."/>
+      <name>Cobertura</name>
+      <filterExecutors>false</filterExecutors>
+      <filterQueue>false</filterQueue>
+      <properties class="hudson.model.View$PropertyList"/>
+      <jobNames>
+        <comparator class="hudson.util.CaseInsensitiveComparator" reference="../../../hudson.plugins.view.dashboard.Dashboard/jobNames/comparator"/>
+        <string>LCM-stage_2/master</string>
+        <string>osmclient-stage_2-merge/master</string>
+      </jobNames>
+      <jobFilters/>
+      <columns>
+        <hudson.views.StatusColumn/>
+        <hudson.views.WeatherColumn/>
+        <hudson.views.JobColumn/>
+        <hudson.views.LastSuccessColumn/>
+        <hudson.views.LastFailureColumn/>
+        <hudson.views.LastDurationColumn/>
+        <hudson.views.BuildButtonColumn/>
+        <org.jenkins.plugins.builton.BuiltOnColumn plugin="built-on-column@1.1"/>
+        <hudson.plugins.robot.view.RobotListViewColumn plugin="robot@2.0.0"/>
+        <io.jenkins.plugins.coverage.CoverageColumn plugin="code-coverage-api@1.0.13"/>
+        <io.jenkins.plugins.coverage.CoverageColumn plugin="code-coverage-api@1.0.13"/>
+      </columns>
+      <includeRegex>.*.stage_2.*</includeRegex>
+      <recurse>true</recurse>
+      <useCssStyle>false</useCssStyle>
+      <includeStdJobList>false</includeStdJobList>
+      <hideJenkinsPanels>false</hideJenkinsPanels>
+      <leftPortletWidth>50%</leftPortletWidth>
+      <rightPortletWidth>50%</rightPortletWidth>
+      <leftPortlets>
+        <hudson.plugins.view.dashboard.core.ImagePortlet>
+          <id>dashboard_portlet_31869</id>
+          <name>POL Master</name>
+          <url>https://osm.etsi.org/jenkins/job/POL-stage_2-merge/job/master/lastSuccessfulBuild/cobertura/graph</url>
+        </hudson.plugins.view.dashboard.core.ImagePortlet>
+        <hudson.plugins.view.dashboard.core.ImagePortlet>
+          <id>dashboard_portlet_20</id>
+          <name>N2VC Master</name>
+          <url>https://osm.etsi.org/jenkins/job/N2VC-stage_2-merge/job/master/lastSuccessfulBuild/cobertura/graph</url>
+        </hudson.plugins.view.dashboard.core.ImagePortlet>
+        <hudson.plugins.view.dashboard.core.ImagePortlet>
+          <id>dashboard_portlet_13094</id>
+          <name>LCM Master</name>
+          <url>https://osm.etsi.org/jenkins/job/LCM-stage_2-merge/job/master/lastSuccessfulBuild/cobertura/graph</url>
+        </hudson.plugins.view.dashboard.core.ImagePortlet>
+        <hudson.plugins.view.dashboard.core.ImagePortlet>
+          <id>dashboard_portlet_13350</id>
+          <name>RO Master</name>
+          <url>https://osm.etsi.org/jenkins/job/RO-stage_2-merge/job/master/lastSuccessfulBuild/cobertura/graph</url>
+        </hudson.plugins.view.dashboard.core.ImagePortlet>
+        <hudson.plugins.view.dashboard.core.ImagePortlet>
+          <id>dashboard_portlet_5751</id>
+          <name>OSM Client Master</name>
+          <url>https://osm.etsi.org/jenkins/job/osmclient-stage_2-merge/job/master/lastSuccessfulBuild/cobertura/graph</url>
+        </hudson.plugins.view.dashboard.core.ImagePortlet>
+      </leftPortlets>
+      <rightPortlets>
+        <hudson.plugins.view.dashboard.core.ImagePortlet>
+          <id>dashboard_portlet_1960</id>
+          <name>MON Master</name>
+          <url>https://osm.etsi.org/jenkins/job/MON-stage_2-merge/job/master/lastSuccessfulBuild/cobertura/graph</url>
+        </hudson.plugins.view.dashboard.core.ImagePortlet>
+        <hudson.plugins.view.dashboard.core.ImagePortlet>
+          <id>dashboard_portlet_25713</id>
+          <name>NBI Master</name>
+          <url>https://osm.etsi.org/jenkins/job/NBI-stage_2-merge/job/master/lastSuccessfulBuild/cobertura/graph</url>
+        </hudson.plugins.view.dashboard.core.ImagePortlet>
+        <hudson.plugins.view.dashboard.core.ImagePortlet>
+          <id>dashboard_portlet_31998</id>
+          <name>PLA Master</name>
+          <url>https://osm.etsi.org/jenkins/job/PLA-stage_2-merge/job/master/lastSuccessfulBuild/cobertura/graph</url>
+        </hudson.plugins.view.dashboard.core.ImagePortlet>
+        <hudson.plugins.view.dashboard.core.ImagePortlet>
+          <id>dashboard_portlet_5292</id>
+          <name>Common Master</name>
+          <url>https://osm.etsi.org/jenkins/job/common-stage_2-merge/job/master/lastSuccessfulBuild/cobertura/graph</url>
+        </hudson.plugins.view.dashboard.core.ImagePortlet>
+      </rightPortlets>
+      <topPortlets/>
+      <bottomPortlets/>
+    </hudson.plugins.view.dashboard.Dashboard>
+    <listView>
+      <owner class="hudson" reference="../../.."/>
+      <name>v10.0</name>
+      <filterExecutors>false</filterExecutors>
+      <filterQueue>false</filterQueue>
+      <properties class="hudson.model.View$PropertyList"/>
+      <jobNames>
+        <comparator class="hudson.util.CaseInsensitiveComparator" reference="../../../hudson.plugins.view.dashboard.Dashboard/jobNames/comparator"/>
+      </jobNames>
+      <jobFilters>
+        <hudson.views.StatusFilter>
+          <statusFilter>true</statusFilter>
+        </hudson.views.StatusFilter>
+      </jobFilters>
+      <columns>
+        <hudson.views.StatusColumn/>
+        <hudson.views.WeatherColumn/>
+        <hudson.views.JobColumn/>
+        <hudson.views.LastSuccessColumn/>
+        <hudson.views.LastFailureColumn/>
+        <hudson.views.LastDurationColumn/>
+        <hudson.views.BuildButtonColumn/>
+        <org.jenkins.plugins.builton.BuiltOnColumn plugin="built-on-column@1.1"/>
+        <hudson.plugins.robot.view.RobotListViewColumn plugin="robot@2.0.0"/>
+      </columns>
+      <includeRegex>.*-stage.*merge/v10\.0</includeRegex>
+      <recurse>true</recurse>
+    </listView>
+    <listView>
+      <owner class="hudson" reference="../../.."/>
+      <name>v12.0</name>
+      <filterExecutors>false</filterExecutors>
+      <filterQueue>false</filterQueue>
+      <properties class="hudson.model.View$PropertyList"/>
+      <jobNames>
+        <comparator class="hudson.util.CaseInsensitiveComparator" reference="../../../hudson.plugins.view.dashboard.Dashboard/jobNames/comparator"/>
+      </jobNames>
+      <jobFilters>
+        <hudson.views.StatusFilter>
+          <statusFilter>true</statusFilter>
+        </hudson.views.StatusFilter>
+      </jobFilters>
+      <columns>
+        <hudson.views.StatusColumn/>
+        <hudson.views.WeatherColumn/>
+        <hudson.views.JobColumn/>
+        <hudson.views.LastSuccessColumn/>
+        <hudson.views.LastFailureColumn/>
+        <hudson.views.LastDurationColumn/>
+        <hudson.views.BuildButtonColumn/>
+        <org.jenkins.plugins.builton.BuiltOnColumn plugin="built-on-column@1.1"/>
+        <hudson.plugins.robot.view.RobotListViewColumn plugin="robot@2.0.0"/>
+      </columns>
+      <includeRegex>.*-stage.*/v12\.0</includeRegex>
+      <recurse>true</recurse>
+    </listView>
+    <listView>
+      <owner class="hudson" reference="../../.."/>
+      <name>stage2-merge</name>
+      <filterExecutors>false</filterExecutors>
+      <filterQueue>false</filterQueue>
+      <properties class="hudson.model.View$PropertyList"/>
+      <jobNames>
+        <comparator class="hudson.util.CaseInsensitiveComparator" reference="../../../hudson.plugins.view.dashboard.Dashboard/jobNames/comparator"/>
+      </jobNames>
+      <jobFilters/>
+      <columns>
+        <hudson.views.StatusColumn/>
+        <hudson.views.WeatherColumn/>
+        <hudson.views.JobColumn/>
+        <hudson.views.LastSuccessColumn/>
+        <hudson.views.LastFailureColumn/>
+        <hudson.views.LastDurationColumn/>
+        <hudson.views.BuildButtonColumn/>
+        <org.jenkins.plugins.builton.BuiltOnColumn plugin="built-on-column@1.1"/>
+        <hudson.plugins.robot.view.RobotListViewColumn plugin="robot@2.0.0"/>
+      </columns>
+      <includeRegex>.*-stage_2-merge/master</includeRegex>
+      <recurse>true</recurse>
+    </listView>
+    <listView>
+      <owner class="hudson" reference="../../.."/>
+      <name>v13.0</name>
+      <filterExecutors>false</filterExecutors>
+      <filterQueue>false</filterQueue>
+      <properties class="hudson.model.View$PropertyList"/>
+      <jobNames>
+        <comparator class="hudson.util.CaseInsensitiveComparator" reference="../../../hudson.plugins.view.dashboard.Dashboard/jobNames/comparator"/>
+      </jobNames>
+      <jobFilters/>
+      <columns>
+        <hudson.views.StatusColumn/>
+        <hudson.views.WeatherColumn/>
+        <hudson.views.JobColumn/>
+        <hudson.views.LastSuccessColumn/>
+        <hudson.views.LastFailureColumn/>
+        <hudson.views.LastDurationColumn/>
+        <hudson.views.BuildButtonColumn/>
+        <org.jenkins.plugins.builton.BuiltOnColumn plugin="built-on-column@1.1"/>
+        <hudson.plugins.robot.view.RobotListViewColumn plugin="robot@2.0.0"/>
+      </columns>
+      <includeRegex>.*-stage.*/v13\.0</includeRegex>
+      <recurse>true</recurse>
+    </listView>
+    <listView>
+      <owner class="hudson" reference="../../.."/>
+      <name>Stage2</name>
+      <filterExecutors>false</filterExecutors>
+      <filterQueue>false</filterQueue>
+      <properties class="hudson.model.View$PropertyList"/>
+      <jobNames>
+        <comparator class="hudson.util.CaseInsensitiveComparator" reference="../../../hudson.plugins.view.dashboard.Dashboard/jobNames/comparator"/>
+      </jobNames>
+      <jobFilters/>
+      <columns>
+        <hudson.views.StatusColumn/>
+        <hudson.views.WeatherColumn/>
+        <hudson.views.JobColumn/>
+        <hudson.views.LastSuccessColumn/>
+        <hudson.views.LastFailureColumn/>
+        <hudson.views.LastDurationColumn/>
+        <hudson.views.BuildButtonColumn/>
+        <org.jenkins.plugins.builton.BuiltOnColumn plugin="built-on-column@1.1"/>
+        <hudson.plugins.robot.view.RobotListViewColumn plugin="robot@2.0.0"/>
+      </columns>
+      <includeRegex>buildall-stage_2-merge.*</includeRegex>
+      <recurse>false</recurse>
+    </listView>
+    <listView>
+      <owner class="hudson" reference="../../.."/>
+      <name>Daily</name>
+      <filterExecutors>false</filterExecutors>
+      <filterQueue>false</filterQueue>
+      <properties class="hudson.model.View$PropertyList"/>
+      <jobNames>
+        <comparator class="hudson.util.CaseInsensitiveComparator" reference="../../../hudson.plugins.view.dashboard.Dashboard/jobNames/comparator"/>
+        <string>azure_robot_tests</string>
+        <string>daily-stage_4-releasefifteen</string>
+        <string>daily-stage_4-releasefourteen</string>
+        <string>daily-stage_4-releasetwelve</string>
+        <string>daily-stage_4-testing</string>
+      </jobNames>
+      <jobFilters/>
+      <columns>
+        <hudson.views.StatusColumn/>
+        <hudson.views.WeatherColumn/>
+        <hudson.views.JobColumn/>
+        <hudson.views.LastSuccessColumn/>
+        <hudson.views.LastFailureColumn/>
+        <hudson.views.LastDurationColumn/>
+        <hudson.views.BuildButtonColumn/>
+        <org.jenkins.plugins.builton.BuiltOnColumn plugin="built-on-column@1.1"/>
+        <hudson.plugins.robot.view.RobotListViewColumn plugin="robot@2.0.0"/>
+      </columns>
+      <recurse>false</recurse>
+    </listView>
+    <listView>
+      <owner class="hudson" reference="../../.."/>
+      <name>v14.0</name>
+      <filterExecutors>false</filterExecutors>
+      <filterQueue>false</filterQueue>
+      <properties class="hudson.model.View$PropertyList"/>
+      <jobNames>
+        <comparator class="hudson.util.CaseInsensitiveComparator" reference="../../../hudson.plugins.view.dashboard.Dashboard/jobNames/comparator"/>
+      </jobNames>
+      <jobFilters/>
+      <columns>
+        <hudson.views.StatusColumn/>
+        <hudson.views.WeatherColumn/>
+        <hudson.views.JobColumn/>
+        <hudson.views.LastSuccessColumn/>
+        <hudson.views.LastFailureColumn/>
+        <hudson.views.LastDurationColumn/>
+        <hudson.views.BuildButtonColumn/>
+        <org.jenkins.plugins.builton.BuiltOnColumn plugin="built-on-column@1.1"/>
+        <hudson.plugins.robot.view.RobotListViewColumn plugin="robot@2.0.0"/>
+      </columns>
+      <includeRegex>.*-stage.*/v14\.0</includeRegex>
+      <recurse>true</recurse>
+    </listView>
+    <listView>
+      <owner class="hudson" reference="../../.."/>
+      <name>v15.0</name>
+      <filterExecutors>false</filterExecutors>
+      <filterQueue>false</filterQueue>
+      <properties class="hudson.model.View$PropertyList"/>
+      <jobNames>
+        <comparator class="hudson.util.CaseInsensitiveComparator" reference="../../../hudson.plugins.view.dashboard.Dashboard/jobNames/comparator"/>
+      </jobNames>
+      <jobFilters/>
+      <columns>
+        <hudson.views.StatusColumn/>
+        <hudson.views.WeatherColumn/>
+        <hudson.views.JobColumn/>
+        <hudson.views.LastSuccessColumn/>
+        <hudson.views.LastFailureColumn/>
+        <hudson.views.LastDurationColumn/>
+        <hudson.views.BuildButtonColumn/>
+        <org.jenkins.plugins.builton.BuiltOnColumn plugin="built-on-column@1.1"/>
+        <hudson.plugins.robot.view.RobotListViewColumn plugin="robot@2.0.0"/>
+      </columns>
+      <includeRegex>.*-stage.*/v15\.0</includeRegex>
+      <recurse>true</recurse>
+    </listView>
+  </views>
+  <primaryView>all</primaryView>
+  <slaveAgentPort>49187</slaveAgentPort>
+  <label></label>
+  <crumbIssuer class="hudson.security.csrf.DefaultCrumbIssuer">
+    <excludeClientIPFromCrumb>false</excludeClientIPFromCrumb>
+  </crumbIssuer>
+  <nodeProperties/>
+  <globalNodeProperties/>
+  <noUsageStatistics>true</noUsageStatistics>
+</hudson>

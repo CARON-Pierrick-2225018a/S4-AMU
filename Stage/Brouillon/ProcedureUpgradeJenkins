@@ -1,0 +1,59 @@
+Désactiver HTTPS et passer le port HTTP à 8087
+
+1. Modifier le fichier `/etc/default/jenkins` :
+
+    sudo nano /etc/default/jenkins
+
+    Mettre à jour les lignes suivantes :
+
+    ```
+    HTTP_PORT=8087
+    JENKINS_ARGS="--webroot=/var/cache/\\$NAME/war --httpPort=\\$HTTP_PORT --prefix=\\$PREFIX"
+
+    ```
+
+Installation les plugins via l'interface utilisateur (UI)
+
+1. Connectez-vous à l'interface utilisateur de Jenkins et installez les plugins nécessaires.
+
+Arrêter Jenkins
+
+1. Arrêter le service Jenkins :
+
+    sudo service jenkins stop
+
+
+Mettre à jour Jenkins
+
+1. Ajouter la clé Jenkins :
+
+    ```
+    sudo wget -O /usr/share/keyrings/jenkins-keyring.asc <https://pkg.jenkins.io/debian/jenkins.io-2023.key>
+
+    ```
+
+2. Ajouter le dépôt Jenkins :
+
+    ```
+    echo "deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] <https://pkg.jenkins.io/debian> binary/" | sudo tee /etc/apt/sources.list.d/jenkins.list > /dev/null
+
+    ```
+
+3. Mettre à jour les paquets et installer Jenkins :
+
+    ```
+    sudo apt-get update
+    sudo apt-get install jenkins
+    ```
+
+4. Changer la version de java
+
+    ```
+    sudo update-alternative --config java
+    select number : 1
+    ```
+
+
+Mettre à jour les plugins Jenkins
+
+1. Remettez à jour les plugins via l'interface utilisateur (UI) de Jenkins.
